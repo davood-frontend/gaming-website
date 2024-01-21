@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const CostumNextLink = ({ href, children }) => {
     return (
-        <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 200 }}>
+        <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 300 ,fontSize : '14px'}}>
             {children}
         </Link>
     )
