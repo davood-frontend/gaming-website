@@ -1,5 +1,56 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.devil {
+  animation: devilAnimation 0.7s ease forwards;
+}
+
+.assassin {
+  animation: assassinAnimation 0.7s ease forwards;
+}
+
+@keyframes assassinAnimation {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes devilAnimation {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.HomePageSliderController svg {
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 3px;
+  border-radius: 50%;
+  transition: all 0.4s;
+
+}
+
+.HomePageSliderController>* {
+  transition: all 0.4s;
+}
+
+.HomePageSliderController:hover>* {
+  color: white;
+  transition: all 0.4s;
+}
+
+.HomePageSliderController:hover svg {
+  border: 1px solid #af7ce2;
+  opacity: 1;
+  transition: all 0.4s;
 }

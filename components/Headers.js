@@ -108,7 +108,7 @@ export const MobileHeader = () => {
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', width: 1, alignItems: 'center', py: 1.5 }}>
                         <CostumIconButton Icon={Menu} size='medium' />
 
-                        <Image src={Logo} style={{ width: '65px', height: '40px' }} />
+                        <Image src={Logo} style={{ width: '65px', height: '40px' }} alt='لوگو وبسایت'/>
                         <CostumIconButton Icon={PersonOutlineOutlined} size='medium' />
 
                     </Box>

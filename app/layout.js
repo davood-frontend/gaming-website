@@ -1,9 +1,10 @@
 import { MainTheme } from '@/theme/theme'
 import './globals.css'
-import {Vazirmatn} from 'next/font/google'
+import { Vazirmatn } from 'next/font/google'
+import {MainContext} from '@/context/mainContext'
 const vazir = Vazirmatn({
-  subsets : ['arabic','latin'],
-  display : 'swap',
+  subsets: ['arabic', 'latin'],
+  display: 'swap',
 })
 export const metadata = {
   title: 'Create Next App',
@@ -15,9 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="fa-IR" dir='rtl' className={vazir.className}>
       <body>
         <MainTheme>
-          {children}
+          <MainContext>
+            {children}
+          </MainContext>
         </MainTheme>
       </body>
-    </html>
+    </html >
   )
 }

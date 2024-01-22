@@ -1,22 +1,36 @@
 'use client'
-import React from 'react';
-import Image from 'next/image';
-import assassinsCreed from '@/assets/assassinsCreed.jpg'
-import watchDogs from '@/assets/watchDogs.jpg'
+import React, { useEffect } from 'react';
 import { Box, Avatar, Typography } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { MobileHeader, DesktopHeader } from '@/components/Headers'
-import { Circle, ShoppingCartOutlined } from '@mui/icons-material';
-import { grey } from '@mui/material/colors';
-import Grid from '@mui/material/Unstable_Grid2'
 import AppBackground from '@/components/AppBackground';
 import HeroSection from '@/components/HeroSection';
 import HomePageHero from '@/components/HomePageHero';
+import { Context } from '@/context/mainContext';
+import { useContext } from 'react';
 const Home = () => {
+  const { homePageHero, homePageHandler } = useContext(Context)
   const theme = useTheme()
-  const smallerThanMd = useMediaQuery(theme.breakpoints.down('md'))
   const largerThanMd = useMediaQuery(theme.breakpoints.up('md')) //false by default
+
+  useEffect(() => {
+    let timeout = '';
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(() => {
+      if (homePageHero.id == 0) {
+        homePageHandler('devilMayCry')
+      } else {
+        homePageHandler('watchDogs')
+      }
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [homePageHero])
 
   return (
     <Box>
@@ -24,9 +38,9 @@ const Home = () => {
       {largerThanMd ? <DesktopHeader /> : <MobileHeader />}
 
       <Box sx={{ backgroundColor: '#101820', height: '8200px' }}>
-        <AppBackground>
-          <HeroSection>
-            <HomePageHero />
+        <AppBackground homePageHero={homePageHero}>
+          <HeroSection >
+            <HomePageHero homePageHero={homePageHero} homePageHandler={homePageHandler} />
           </HeroSection>
         </AppBackground>
         <Box sx={{ color: 'white' }}>
