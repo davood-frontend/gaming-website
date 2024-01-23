@@ -9,6 +9,10 @@ import HeroSection from '@/components/HeroSection';
 import HomePageHero from '@/components/HomePageHero';
 import { Context } from '@/context/mainContext';
 import { useContext } from 'react';
+import Link from 'next/link';
+import Grid from '@mui/material/Unstable_Grid2'
+import CostumNextLink from '@/components/ProductCategory';
+import ProductCategories from '@/components/ProductCategories';
 const Home = () => {
   const { homePageHero, homePageHandler } = useContext(Context)
   const theme = useTheme()
@@ -43,12 +47,10 @@ const Home = () => {
             <HomePageHero homePageHero={homePageHero} homePageHandler={homePageHandler} />
           </HeroSection>
         </AppBackground>
-        <Box sx={{ color: 'white' }}>
-          what you doin
-        </Box>
+        <ProductCategories />
 
       </Box>
-    </Box>
+    </Box >
   );
 };
 

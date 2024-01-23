@@ -54,3 +54,42 @@
   opacity: 1;
   transition: all 0.4s;
 }
+
+.hover-to-top {
+  position: relative;
+  bottom: 0px;
+  transition: all 0.3s;
+}
+
+.hover-to-top:hover {
+  bottom: 10px;
+  transition: all 0.3s ease-out  ;
+
+}
+
+.hover-to-top::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  bottom: -6px;
+  right: 5%;
+  border-radius: 8px;
+  opacity: 0.5;
+  background-color: #af7ce2;
+  z-index: -1;
+
+}
+.hover-to-top::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  bottom: -11px;
+  right: 10%;
+  border-radius: 8px;
+  opacity: 0.5;
+  background-color: #af7ce2;
+  z-index: -1;
+
+}
