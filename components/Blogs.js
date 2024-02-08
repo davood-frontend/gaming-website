@@ -10,7 +10,7 @@ const Blogs = () => {
     return (
         <Box sx={{ my: 20, px: { xs: '15px', sm: '30px', md: '10%' } }}>
             <Grid container width={1}>
-                <Grid xs={12} md={8} sx={{ paddingLeft: { xs: 'none', md: 4 }, mb: { xs: 4, md: 0 } }}>
+                <Grid xs={12} md={8} sx={{ paddingRight: { xs: 'none', md: 4 }, mb: { xs: 4, md: 0 } }}>
                     <Avatar className={styles.avatarContainer} variant='square'>
                         <Image fill src={cyberPunk} style={{ borderRadius: 10, objectFit: 'cover' }} />
                         <Box sx={{ zIndex: 2, color: 'white', p: 2 }}>

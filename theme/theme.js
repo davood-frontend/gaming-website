@@ -4,10 +4,18 @@ const vazir = Vazirmatn({
     subsets: ['arabic', 'latin'],
     display: 'swap',
 })
-import { useTheme } from '@mui/material/styles'
-import { useMediaQuery } from "@mui/material"
+import rtlPlugin from 'stylis-plugin-rtl'
+import { CacheProvider } from '@emotion/react'
+import createCache from '@emotion/cache'
+import { prefixer } from 'stylis'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+const cacheRTL = createCache({
+    key: 'muirtl',
+    prepend:true,
+    stylisPlugins: [prefixer, rtlPlugin]
+})
 const theme = createTheme({
+    direction:'rtl',
     palette: {
         mode: 'dark',
         warning: {
@@ -52,8 +60,10 @@ const theme = createTheme({
 
 export const MainTheme = ({ children }) => {
     return (
-        <ThemeProvider theme={theme}>
-            {children}
-        </ThemeProvider>
+        <CacheProvider value={cacheRTL}>
+            <ThemeProvider theme={theme}>
+                {children}
+            </ThemeProvider>
+        </CacheProvider>
     )
 }

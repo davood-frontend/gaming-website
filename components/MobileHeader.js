@@ -31,7 +31,7 @@ const MobileHeader = () => {
                     <Divider color='#040200' />
                     <Grid container columnSpacing={1}>
                         <Grid xs={11} sx={{ py: 1 }}>
-                            <TextField placeholder='جستجوی محصول' fullWidth size='small' variant='standard' sx={{ backgroundColor: '#101820', borderRadius: 1, py: 0.6, paddingRight: 1, height: 1 }} InputProps={{ endAdornment: <InputAdornment position='end'> <SearchOutlined /> </InputAdornment>, disableUnderline: true }} />
+                            <TextField placeholder='جستجوی محصول' fullWidth size='small' variant='standard' sx={{ backgroundColor: '#101820', borderRadius: 1, py: 0.6, px: 1, height: 1 }} InputProps={{ endAdornment: <InputAdornment position='end'> <SearchOutlined /> </InputAdornment>, disableUnderline: true }} />
                         </Grid>
                         <Grid xs={1} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <CostumIconButton Icon={ShoppingCartOutlined} size='medium' />

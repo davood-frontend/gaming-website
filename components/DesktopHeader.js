@@ -16,11 +16,13 @@ const CostumNextLink = ({ href, children }) => {
         </Link>
     )
 }
-const CostumIconButton = ({ Icon, color, size }) => {
+const CostumIconButton = ({ Icon, color, size ,href}) => {
     return (
-        <IconButton size={size || 'small'} color={color || 'default'}>
-            <Icon sx={{ fontSize: '18px' }} />
-        </IconButton>
+        <Link href={href || ''}>
+            <IconButton size={size || 'small'} color={color || 'default'}>
+                <Icon sx={{ fontSize: '18px' }} />
+            </IconButton>
+        </Link>
     )
 }
 
@@ -42,7 +44,7 @@ const DesktopHeader = () => {
 
                         <Grid xs={10} >
 
-                            <Grid sx={{ display: 'flex', justifyContent: 'left' }}>
+                            <Grid sx={{ display: 'flex', justifyContent: 'end' }}>
 
                                 <Box className={styles.socialMediaContainer}>
                                     <CostumIconButton Icon={Twitter} />
@@ -61,11 +63,11 @@ const DesktopHeader = () => {
                             </Grid>
 
 
-                            <Grid sx={{ display: 'flex', justifyContent: 'left', mt: 1.2 }}>
+                            <Grid sx={{ display: 'flex', justifyContent: 'end', mt: 1.2 }}>
                                 <Box >
-                                    <CostumIconButton Icon={HomeOutlined} size='medium' color='secondary' />
+                                    <CostumIconButton href='/' Icon={HomeOutlined} size='medium' color='secondary' />
                                 </Box>
-                                <Box sx={{ display: 'flex', marginRight: 3, gap: 4, alignItems: 'center' }}>
+                                <Box sx={{ display: 'flex', marginLeft: 3, gap: 4, alignItems: 'center' }}>
                                     <CostumNextLink href='shop'>
                                         فروشگاه
                                     </CostumNextLink>
@@ -83,7 +85,7 @@ const DesktopHeader = () => {
                                         درباره ما
                                     </CostumNextLink>
                                 </Box>
-                                <Box sx={{ color: 'white', marginRight: 2 }}>
+                                <Box sx={{ color: 'white', marginLeft: 2 }}>
                                     <CostumIconButton Icon={AutoStoriesOutlined} size='medium' color='secondary' />
 
                                     <CostumIconButton Icon={HeadsetMicOutlined} size='medium' color='secondary' />

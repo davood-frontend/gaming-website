@@ -13,9 +13,13 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.4",
     "@mui/material": "^5.15.4",
+    "i": "^0.3.7",
     "next": "14.0.4",
+    "npm": "^10.4.0",
     "react": "^18",
     "react-dom": "^18",
+    "stylis": "^4.1.1",
+    "stylis-plugin-rtl": "^2.1.1",
     "swiper": "^11.0.5"
   }
 }

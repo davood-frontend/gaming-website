@@ -17,9 +17,7 @@ const FilterSlider = () => {
         <Box className={styles.topFadeBorder} sx={{ px: 2 }}>
             <Slider color='secondary' min={0} max={500000} step={20000} valueLabelDisplay='auto' value={value} onChange={handleChange} />
             <Box sx={{ display: 'flex' }}>
-                <Typography sx={{ mx: 0.5 }}>قیمت : از </Typography>
-                <Typography sx={{ mx: 0.5 }}>{min == 0 ? ' رایگان تا ' : min + ' هزار تومان تا '}</Typography>
-                <Typography sx={{ mx: 0.5 }}>{max == 0 ? 'رایگان' : max + ' هزار تومان '}</Typography>
+                <Typography sx={{ typography: { xs: 'caption', sm: 'body1' } }}>قیمت : از {min == 0 ? `رایگان` : `${min} تومان`} تا {max == 0 ? 'رایگان' : `${max} تومان`}</Typography>
             </Box>
         </Box>
     );

@@ -27,13 +27,13 @@ const ContactItem = ({ Icon, text }) => {
     return (
         <Box sx={{ color: 'white', display: 'flex', mb: 3 }}>
             <Icon color='secondary' />
-            <Typography sx={{ mr: 2, fontWeight: 200 }}>{text}</Typography>
+            <Typography sx={{ ml: 2, fontWeight: 200 }}>{text}</Typography>
         </Box>
     )
 }
 const Footer = () => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' ,zIndex:10}}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 10 }}>
             <Grid container width={1} sx={{ px: { sm: '2%', md: '4%', lg: '10%' } }} columnSpacing={5}>
                 <Grid xs={12} md={5} sx={{ mb: { xs: 5, md: 0 } }}>
                     <Typography variant='h6' color='secondary'>دمو قالب گیم پلاس</Typography>

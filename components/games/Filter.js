@@ -22,7 +22,7 @@ const Filter = () => {
         setSelectedData({ ...selectedData, [data.name]: data.value })
     }
     return (
-        <Box sx={{ paddingTop: 22, width: 1, paddingX: { xs: '30px', md: '10%' }, mb: 10 }}>
+        <Box sx={{ paddingTop: { xs: 5, md: 22 }, width: 1, paddingX: { xs: '10px', md: '10%' }, mb: 8 }}>
             <Accordion sx={{ '&.MuiPaper-root': { borderRadius: 2.3 }, background: 'rgba(0, 0, 0, 0.5)' }}>
                 <AccordionSummary expandIcon={<IconButton color='secondary'> <ExpandMoreIcon /> </IconButton>} id='test'>
                     فیلتر ها
