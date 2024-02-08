@@ -1,0 +1,188 @@
+.SliderController {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
+    margin-bottom: 8px;
+}
+
+.SliderController svg {
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 3px;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.SliderController>* {
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.heroInformation {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #616161;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switchContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-right: 1.5rem;
+}
+
+.biggerHalfAvatar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+
+.biggerHalfContainer {
+    position: relative;
+    grid-template-rows: 450px 50px;
+    display: grid;
+}
+
+.SliderController:hover svg {
+    border-color: #af7ce2;
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+.biggerHalfOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left, rgba(16, 24, 32, 0.8), rgba(16, 24, 32, 0) 80%);
+    z-index: 1;
+    border-radius: 0.5rem;
+}
+
+.smallerHalfInfo {
+    color: white;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.smallerHalfNameContainer {
+    background-color: #af7ce2;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.smallerHalfDesc {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.smallerHalfDescContainer {
+    position: absolute;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.smallerHalfAvatar {
+    width: 100%;
+    height: 500px;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.smallerHalfContainer {
+    position: relative;
+    display: block;
+}
+.smallerHalfOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(16, 24, 32, 0.9), rgba(16, 24, 32, 0) 80%);
+    z-index: 1;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+    .biggerHalfContainer {
+        grid-template-rows: 350px 50px;
+    }
+
+    .smallerHalfAvatar {
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .biggerHalfContainer {
+        grid-template-rows: 300px 50px;
+    }
+
+    .SliderController {
+        cursor: pointer;
+    }
+
+    .smallerHalfInfo {
+        display: none;
+    }
+
+    .smallerHalfAvatar {
+        height: 350px;
+    }
+
+    .smallerHalfNameContainer {
+        padding: 0.3rem;
+
+    }
+}
+
+
+@media (max-width: 600px) {
+    .smallerHalfInfo {
+        display: none;
+    }
+
+    .biggerHalfContainer {
+        grid-template-rows: 250px 50px;
+    }
+
+    .smallerHalfAvatar {
+        height: 300px;
+    }
+
+    .smallerHalfContainer {
+        display: none;
+    }
+
+
+}

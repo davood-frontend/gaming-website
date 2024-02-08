@@ -4,7 +4,8 @@ const vazir = Vazirmatn({
     subsets: ['arabic', 'latin'],
     display: 'swap',
 })
-
+import { useTheme } from '@mui/material/styles'
+import { useMediaQuery } from "@mui/material"
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 const theme = createTheme({
     palette: {
@@ -24,16 +25,29 @@ const theme = createTheme({
         success: {
             main: '#2bd964'
         },
-        dark : {
-            main : '#000000'
+        dark: {
+            main: '#000000'
         }
     },
     typography: {
         fontSize: 13,
         fontFamily: vazir.style.fontFamily,
-        fontWeightRegular: 200,
-        
+        fontWeightRegular: 400,
     },
+    breakpoints: {
+        keys: ['xs', 'smBefore', 'sm', 'smAfter', 'md', 'lg', 'xl'],
+        values: {
+            xs: 0,
+            smBefore: 500,
+            sm: 600,
+            smAfter: 700,
+            md: 900,
+            lg: 1200,
+            xl: 1900
+        }
+    }
+
+
 })
 
 export const MainTheme = ({ children }) => {
@@ -43,5 +57,3 @@ export const MainTheme = ({ children }) => {
         </ThemeProvider>
     )
 }
-//#c4c4c4
-//0d0e1b the background of video part

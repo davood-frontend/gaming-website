@@ -6,150 +6,30 @@
 
 .devil {
   animation: devilAnimation 0.7s ease forwards;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 0.5rem;
+
 }
 
 .assassin {
   animation: assassinAnimation 0.7s ease forwards;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 0.5rem;
 }
 
+/* .animated-line {
+  animation: transform 11s linear infinite;
+} */
 
-.hover-to-top {
-  position: relative;
-  bottom: 0px;
-  transition: all 0.3s;
-}
-
-.hover-to-top:hover {
-  bottom: 10px;
-  transition: all 0.3s ease-out;
-
-}
-
-.hover-to-top::before {
-  content: '';
-  position: absolute;
-  width: 90%;
-  height: 100%;
-  bottom: -6px;
-  right: 5%;
-  border-radius: 8px;
-  opacity: 0.5;
-  background-color: #af7ce2;
-  z-index: -1;
-
-}
-
-.hover-to-top::after {
-  content: '';
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  bottom: -11px;
-  right: 10%;
-  border-radius: 8px;
-  opacity: 0.5;
-  background-color: #af7ce2;
-  z-index: -1;
-
-}
-
-.animated-dot {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  background-color: #af7ce2;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.animated-dot::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  animation: smallBorder 1s infinite;
-  border: 1px solid #af7ce2;
-  border-radius: 50%;
-}
-
-.animated-dot::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  animation: bigBorder 1s infinite;
-  border: 1px solid #af7ce2;
-  border-radius: 50%;
-}
-
-.banner-animated-line::after {
-  animation: progressBar 4s infinite;
-  content: '';
-  position: absolute;
-  height: 3px;
-  background-color: #af7ce2;
-  top: 120%;
-  right: 0;
-  border-radius: 10px;
-}
-
-.banner-animated-textShadow {
-  animation: textShadow 3s infinite;
-}
-
-@keyframes textShadow {
+@keyframes transform {
   0% {
-    text-shadow: 0 0 0 rgba(254, 231, 21, 0.5);
-  }
-
-  50% {
-    text-shadow: 0 0 10px rgba(254, 231, 21, 0.5);
+    transform: translate(-60%, 0);
   }
 
   100% {
-    text-shadow: 0 0 0 rgba(254, 231, 21, 0.5);
-  }
-}
-
-@keyframes progressBar {
-  0% {
-    width: 50%;
-  }
-
-  50% {
-    width: 100%;
-  }
-
-  100% {
-    width: 50%;
-  }
-}
-
-@keyframes smallBorder {
-  from {
-    width: 15px;
-    height: 15px;
-    opacity: 1;
-  }
-
-  to {
-    width: 30px;
-    height: 30px;
-    opacity: 0;
-  }
-}
-
-@keyframes bigBorder {
-  from {
-    width: 15px;
-    height: 15px;
-    opacity: 1;
-  }
-
-  to {
-    width: 50px;
-    height: 50px;
-    opacity: 0;
+    transform: translate(100%, 0);
   }
 }
 
@@ -170,93 +50,5 @@
 
   to {
     opacity: 1;
-  }
-}
-
-.mySwiper {
-  position: relative;
-  bottom: 0px;
-  transition: all 0.3s;
-
-}
-
-.mySwiper:hover {
-  bottom: 15px;
-  transition: all 0.3s;
-}
-
-.swiper-container-free-mode>.swiper-wrapper {
-  transition-timing-function: linear;
-}
-
-.bg {
-  background-image: url(../assets/companies.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 180px;
-  border-radius: 10px;
-  position: relative;
-  opacity: 0.3;
-}
-
-
-.bg::before {
-  border-radius: 10px;
-  content: '';
-  position: absolute;
-  background-color: rgba(22, 42, 62, 0.618);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-}
-
-.companies-hover-to-top {
-  bottom: 0px;
-  transition: 0.5s all;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-.companies-hover-to-top:hover {
-  bottom: 10px;
-  transition: 0.4s ease-out all;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-@media (min-width: 992px) {
-  .HomePageSliderController {
-    cursor: pointer;
-
-  }
-
-  .HomePageSliderController svg {
-    border: 1px solid rgba(0, 0, 0, 0);
-    padding: 3px;
-    border-radius: 50%;
-    transition: all 0.4s;
-    font-size: 15px;
-
-  }
-
-  .HomePageSliderController>* {
-    transition: all 0.4s;
-  }
-
-  .HomePageSliderController:hover>* {
-    color: white;
-    transition: all 0.4s;
-  }
-
-  .HomePageSliderController:hover svg {
-    border: 1px solid #af7ce2;
-    opacity: 1;
-    transition: all 0.4s;
-  }
-}
-
-@media (max-width: 899px) {
-  .bg {
-    height: 140px;
   }
 }

@@ -30,7 +30,8 @@ export const MainContext = ({ children }) => {
         id: 0,
         background: assassinsCreed,
         biggerHalf: assassinsCreed,
-        smallerHalf: watchDogs
+        smallerHalf: watchDogs,
+        class: 'assassin'
     })
 
     const homePageHandler = (game) => {

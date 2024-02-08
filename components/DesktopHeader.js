@@ -1,16 +1,17 @@
+'use client'
 import React from 'react';
 import { AppBar, Toolbar, Container, Typography, Box, Divider, IconButton, TextField, InputAdornment } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import Logo from '@/assets/headerLogo.png'
 import Image from 'next/image';
-import { PersonOutlineOutlined, SearchOutlined, ShoppingCartOutlined, Instagram, Telegram, LinkedIn, Facebook, Twitter, HeadsetMicOutlined, AutoStoriesOutlined, HomeOutlined, Menu } from '@mui/icons-material';
+import { PersonOutlineOutlined, SearchOutlined, ShoppingCartOutlined, Instagram, Telegram, LinkedIn, Facebook, Twitter, HeadsetMicOutlined, AutoStoriesOutlined, HomeOutlined } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
-import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
+import styles from '@/styles/homePage/Header.module.css'
 
 const CostumNextLink = ({ href, children }) => {
     return (
-        <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 300 ,fontSize : '14px'}}>
+        <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 300, fontSize: '14px' }}>
             {children}
         </Link>
     )
@@ -24,11 +25,10 @@ const CostumIconButton = ({ Icon, color, size }) => {
 }
 
 
-export const DesktopHeader = () => {
-    const theme = useTheme()
+const DesktopHeader = () => {
     return (
 
-        <AppBar sx={{ mt: 6.5, backgroundColor: 'transparent', boxShadow: 'none', position: 'absolute', backgroundImage: 'none' }}>
+        <AppBar className={styles.desktopHeader}>
             <Container maxWidth={false}>
                 <Toolbar sx={{ '&.MuiToolbar-root': { paddingX: { sm: '20px', md: '30px', lg: '10%' } } }}>
                     <Grid container sx={{ width: 1 }}>
@@ -44,14 +44,14 @@ export const DesktopHeader = () => {
 
                             <Grid sx={{ display: 'flex', justifyContent: 'left' }}>
 
-                                <Box sx={{ display: 'flex', backgroundColor: 'rgba(0, 0, 0, 0.2)', borderRadius: 5, py: 0.3, alignItems: 'center', marginLeft: 2, columnGap: 3, px: 2 }}>
+                                <Box className={styles.socialMediaContainer}>
                                     <CostumIconButton Icon={Twitter} />
                                     <CostumIconButton Icon={Facebook} />
                                     <CostumIconButton Icon={LinkedIn} />
                                     <CostumIconButton Icon={Telegram} />
                                     <CostumIconButton Icon={Instagram} />
                                 </Box>
-                                <Box sx={{ display: 'flex', backgroundColor: theme.palette.secondary.main, borderRadius: 5, py: 0.3, alignItems: 'center', columnGap: 2, px: 2 }}>
+                                <Box className={styles.actionContainer} >
                                     <CostumIconButton Icon={SearchOutlined} color='dark' />
                                     <Divider orientation='vertical' color={grey[900]} variant='middle' flexItem />
                                     <CostumIconButton Icon={ShoppingCartOutlined} color='dark' />
@@ -73,7 +73,7 @@ export const DesktopHeader = () => {
                                     <CostumNextLink href='consols'>
                                         کنسول ها
                                     </CostumNextLink>
-                                    <CostumNextLink href='game'>
+                                    <CostumNextLink href='games'>
                                         بازی
                                     </CostumNextLink>
                                     <CostumNextLink href='equipments'>
@@ -99,30 +99,4 @@ export const DesktopHeader = () => {
         </AppBar>
     )
 }
-export const MobileHeader = () => {
-    return (
-
-        <AppBar sx={{ backgroundImage: 'none', backgroundColor: '#192531' }} position='sticky'>
-            <Toolbar>
-                <Box sx={{ width: 1 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: 1, alignItems: 'center', py: 1.5 }}>
-                        <CostumIconButton Icon={Menu} size='medium' />
-
-                        <Image src={Logo} style={{ width: '65px', height: '40px' }} alt='لوگو وبسایت'/>
-                        <CostumIconButton Icon={PersonOutlineOutlined} size='medium' />
-
-                    </Box>
-                    <Divider color='#040200' />
-                    <Grid container columnSpacing={1}>
-                        <Grid xs={11} sx={{ py: 1 }}>
-                            <TextField placeholder='جستجوی محصول' fullWidth size='small' variant='standard' sx={{ backgroundColor: '#101820', borderRadius: 1, py: 0.6, paddingRight: 1, height: 1 }} InputProps={{ endAdornment: <InputAdornment position='end'> <SearchOutlined /> </InputAdornment>, disableUnderline: true }} />
-                        </Grid>
-                        <Grid xs={1} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <CostumIconButton Icon={ShoppingCartOutlined} size='medium' />
-                        </Grid>
-                    </Grid>
-                </Box>
-            </Toolbar>
-        </AppBar>
-    );
-};
+export default DesktopHeader;

@@ -12,8 +12,17 @@ import theLastOfUs from '@/assets/theLastOfUs.jpg'
 import watchDogs from '@/assets/watchDogs.jpg'
 import xbox1 from '@/assets/xbox1.jpg'
 import xboxController from '@/assets/xboxController.jpg'
-
-export const latest = {
+import eaSports from '@/assets/companies/eaSports.png'
+import epicGames from '@/assets/companies/epicGames.png'
+import rockStar from '@/assets/companies/rockStar.png'
+import ubisoft from '@/assets/companies/ubisoft.png'
+import atari from '@/assets/companies/atari.png'
+import nintendo from '@/assets/companies/nintendo.png'
+import CodBlackOps from '@/assets/CodBlackOps.png'
+import batmanArkham from '@/assets/batmanArkham.jpg'
+import theLastOfUs1 from '@/assets/theLastOfUs1.jpg'
+import watchDogs2 from '@/assets/watchDogs2.jpg'
+export const latestSwiper = {
     SliderInfo: {
         title: 'آخرین محصولات',
         desc: 'آخرین محصولات ارائه شده در فروشگاه',
@@ -84,7 +93,7 @@ export const latest = {
     ]
 }
 
-export const games = {
+export const gamesSwiper = {
     SliderInfo: {
         title: 'بازی ها',
         desc: 'بهترین بازی های روز دنیا'
@@ -140,7 +149,7 @@ export const games = {
         },
     ]
 }
-export const consols = {
+export const consolsSwiper = {
     SliderInfo: {
         title: 'کنسول و لوازم جانبی',
         desc: 'بهترین کنسول و لوازم جانبی',
@@ -196,3 +205,101 @@ export const consols = {
         },
     ]
 }
+
+export const suggestionSwiper = {
+    SliderInfo: {
+        title: 'محصولات پیشنهادی',
+        desc: 'محصولاتی که ما به شما پیشنهاد میکنیم',
+    },
+    sliderItems: [
+        {
+            name: 'مورتال کامبت 11',
+            price: null,
+            type: 'دیسک',
+            image: mortalCombat
+        },
+        {
+            name: 'لست آو آس 2',
+            price: '20000',
+            type: 'گیفت کارد',
+            image: theLastOfUs
+        },
+        {
+            name: 'اساسینز کرید آدیسی',
+            price: '50000',
+            type: 'بازی',
+            image: assassinsCreedOdyssey
+        },
+        {
+            name: 'مورتال کامبت 11',
+            price: null,
+            type: 'دیسک',
+            image: mortalCombat
+        },
+        {
+            name: 'لست آو آس 2',
+            price: '20000',
+            type: 'گیفت کارد',
+            image: theLastOfUs
+        },
+        {
+            name: 'اساسینز کرید آدیسی',
+            price: '50000',
+            type: 'بازی',
+            image: assassinsCreedOdyssey
+        },
+    ]
+}
+export const companiesData = [
+    {
+        image: atari,
+        title: 'آتاری'
+    },
+    {
+        image: epicGames,
+        title: 'اپیک گیمز'
+    },
+    {
+        image: eaSports,
+        title: 'الکترونیک آرتز'
+    },
+    {
+        image: rockStar,
+        title: 'راکستار'
+    },
+    {
+        image: nintendo,
+        title: 'نینتندو'
+    },
+    {
+        image: ubisoft,
+        title: 'یوبیسافت'
+    },
+
+]
+export const BlogsData = [
+    {
+        image : CodBlackOps,
+        data: 'دلایل عدم موفقیت Call Of Duty Black Ops 4',
+        creator: 'مدیریت',
+        date: '01 شهریور 1399',
+    },
+    {
+        image : watchDogs2,
+        data: 'پیش نمایش بازی Watch Dogs 2',
+        creator: 'کاربر ویژه',
+        date: '18 دی 1400',
+    },
+    {
+        image : batmanArkham,
+        data: 'بازی Batman : Arkham Night معرفی شد',
+        creator: 'کاربر ساده',
+        date: '11 خرداد 1400'
+    },
+    {
+        image : theLastOfUs1,
+        data: 'دموی The Last Of Us 2 در کنفرانس Pax East 2020 قابل بازی خواهد بود',
+        creator: 'مدیریت',
+        date: '1 شهریور 1399'
+    },
+]

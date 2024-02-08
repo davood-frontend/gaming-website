@@ -1,0 +1,42 @@
+.itemsContainer {
+    background-color: #af7ce2;
+    padding: 2.5rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    transition: all 0.4s;
+}
+
+.itemsContainer:hover {
+    bottom: 10px;
+    transition: all 0.4s ease-out;
+}
+
+.itemsContainer::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    bottom: -6px;
+    right: 5%;
+    border-radius: 8px;
+    opacity: 0.5;
+    background-color: #af7ce2;
+    z-index: -1;
+
+}
+
+.itemsContainer::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    bottom: -11px;
+    right: 10%;
+    border-radius: 8px;
+    opacity: 0.5;
+    background-color: #af7ce2;
+    z-index: -1;
+
+}

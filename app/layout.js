@@ -1,7 +1,12 @@
 import { MainTheme } from '@/theme/theme'
 import './globals.css'
 import { Vazirmatn } from 'next/font/google'
-import {MainContext} from '@/context/mainContext'
+import { MainContext } from '@/context/mainContext'
+import DesktopHeader from '@/components/DesktopHeader'
+import MobileHeader from '@/components/MobileHeader'
+import { Box } from '@mui/material'
+import Footer from '@/components/Footer'
+import { StyledEngineProvider } from '@mui/material/styles'
 const vazir = Vazirmatn({
   subsets: ['arabic', 'latin'],
   display: 'swap',
@@ -15,11 +20,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR" dir='rtl' className={vazir.className}>
       <body>
-        <MainTheme>
-          <MainContext>
-            {children}
-          </MainContext>
-        </MainTheme>
+        <StyledEngineProvider injectFirst>
+          <MainTheme>
+            <MainContext>
+              <DesktopHeader />
+              <MobileHeader />
+              <Box sx={{ backgroundColor: '#101820',zIndex:0,position:'relative' }}>
+                {children}
+                <Footer />
+              </Box>
+            </MainContext>
+          </MainTheme>
+        </StyledEngineProvider>
       </body>
     </html >
   )

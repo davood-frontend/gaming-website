@@ -1,0 +1,93 @@
+.avatarContainer {
+    height: 450px;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    border-radius: 9px;
+}
+
+.avatarContainer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(16, 24, 32, 0.9) 20%, rgba(16, 24, 32, 0) 70%);
+    z-index: 1;
+
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.5rem;
+    height: 90px;
+    width: 100%;
+    background-image: none;
+    background-color: #192531;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.cardMedia {
+    width: 170px;
+    height: auto;
+}
+
+.cardContent {
+    margin-right: 0.5rem;
+    overflow: hidden;
+    width: 300px;
+
+}
+
+.MuiCardContent-root {
+    padding: 4.5rem !important;
+}
+
+@media(max-width : 1200px) {}
+
+@media(max-width : 900px) {
+    .avatarContainer {
+        height: 350px;
+    }
+
+    .cardContainer {
+        height: 65px;
+    }
+}
+
+@media(max-width : 600px) {
+    .avatarContainer {
+        height: 250px;
+    }
+
+    .cardContainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cardMedia {
+        height: 250px;
+        width: 100%;
+    }
+
+    .cardContent {
+        overflow: visible;
+    }
+}
+
+@media(max-width : 450px) {
+    .avatarContainer {
+        height: 200px;
+    }
+
+    .cardMedia {
+        height: 150px;
+        width: 100%;
+    }
+
+}

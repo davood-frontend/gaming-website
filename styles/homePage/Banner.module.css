@@ -1,0 +1,109 @@
+.smallAvatarContainer {
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+}
+
+.animatedLine {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 2rem;
+    position: relative;
+    display: block;
+}
+
+.animatedLine::after {
+    animation: progressBar 4s infinite;
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: #af7ce2;
+    top: 120%;
+    right: 0;
+    border-radius: 10px;
+}
+
+.animatedTextShadow {
+    animation: textShadow 3s infinite;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #af7ce2;
+}
+
+.actionContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7%;
+    height: 100%;
+    align-items: end;
+}
+
+.mainContainer {
+    position: relative;
+    height: 460px;
+    margin-top: 4rem;
+}
+
+@keyframes progressBar {
+    0% {
+        width: 50%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes textShadow {
+    0% {
+        text-shadow: 0 0 0 rgba(254, 231, 21, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 10px rgba(254, 231, 21, 0.5);
+    }
+
+    100% {
+        text-shadow: 0 0 0 rgba(254, 231, 21, 0.5);
+    }
+}
+
+@media(max-width : 1200px) {}
+
+@media(max-width : 900px) {
+    .smallAvatarContainer {
+        height: 250px;
+        width: 300px;
+    }
+
+    .bannerAnimatedLine {
+        font-size: 15px;
+    }
+
+    .actionContainer {
+        padding: 0 10%;
+    }
+
+    .mainContainer {
+        height: 300px;
+    }
+}
+
+@media(max-width : 600px) {
+    .smallAvatarContainer {
+        height: 200px;
+        width: 200px;
+    }
+
+    .animatedLine {
+        display: none;
+    }
+
+    .mainContainer {
+        height: 200px;
+    }
+}

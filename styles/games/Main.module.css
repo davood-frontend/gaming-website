@@ -1,0 +1,35 @@
+.topFadeBorder {
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.topFadeBorder::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, rgba(254, 231, 21, 0), #af7ce2, rgba(254, 231, 21, 0));
+}
+
+.bgHover {
+    background-color: #192531;
+    border: none;
+    transition: 0.4s;
+    box-shadow: none;
+}
+
+.gameCard {
+    background-color: #101820;
+    background-image: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.gameCard:hover .bgHover {
+    background-color: #af7ce2;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(175, 124, 226, 0.5);
+}
+
