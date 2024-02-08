@@ -7,6 +7,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { grey } from '@mui/material/colors';
+import styles from '@/styles/homePage/Footer.module.css'
 const CostumLink = ({ children }) => {
     return (
         <Typography variant='body1' sx={{ fontWeight: 200, mb: 1.5 }}>
@@ -31,9 +32,10 @@ const ContactItem = ({ Icon, text }) => {
         </Box>
     )
 }
+
 const Footer = () => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 10 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Grid container width={1} sx={{ px: { sm: '2%', md: '4%', lg: '10%' } }} columnSpacing={5}>
                 <Grid xs={12} md={5} sx={{ mb: { xs: 5, md: 0 } }}>
                     <Typography variant='h6' color='secondary'>دمو قالب گیم پلاس</Typography>
@@ -62,8 +64,8 @@ const Footer = () => {
                     </Box>
                 </Grid>
             </Grid>
-            <Divider sx={{ width: '80%', height: { xs: '2px', lg: '1px' }, background: 'linear-gradient(to right, rgba(254, 231, 21, 0), #af7ce2, rgba(254, 231, 21, 0))', mt: 4 }} color='#af7ce2' />
-            <Box sx={{ py: 2 }}>
+            {/* <Divider sx={{ width: '80%', height: '1px', background: 'linear-gradient(to right, rgba(254, 231, 21, 0), #af7ce2, rgba(254, 231, 21, 0))', mt: 4 }} color='#af7ce2' /> */}
+            <Box className={styles.topFadeBorder} sx={{mt:3}}>
                 <Typography color='white'>تمامی حقوق محفوظ میباشد</Typography>
             </Box>
         </Box>

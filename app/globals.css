@@ -23,6 +23,7 @@
   animation: transform 11s linear infinite;
 } */
 
+
 @keyframes transform {
   0% {
     transform: translate(-60%, 0);

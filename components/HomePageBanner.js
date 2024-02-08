@@ -15,7 +15,7 @@ const HomePageBanner = () => {
             <Avatar variant='square' sx={{ height: 1, width: 1, position: 'absolute' }}>
                 <Image src={banner} fill style={{ filter: 'blur(3px)', objectFit: 'cover', objectPosition: 'top center' }} alt='عکس پس زمینه' />
             </Avatar>
-            <OverLay backGround='linear-gradient(to bottom, #101820 10%, rgba(16, 24, 32, 0.5))' />
+            <OverLay backGround='linear-gradient(to bottom, #101820 90%, rgba(16, 24, 32, 0.5))' />
             <Box className={styles.actionContainer}>
                 <Box sx={{ zIndex: 2, my: 'auto' }}>
                     <Typography sx={{ typography: { xs: 'h5', md: 'h4' } }} className={styles.animatedTextShadow}>فیفا 2020</Typography>
