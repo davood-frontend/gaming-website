@@ -1,5 +1,10 @@
 'use client'
 import { Vazirmatn } from 'next/font/google'
+import localFont from 'next/font/local'
+// const vazir = localFont({
+//     src: '../app/Vazir.woff2',
+//     display: 'swap'
+// })
 const vazir = Vazirmatn({
     subsets: ['arabic', 'latin'],
     display: 'swap',
@@ -11,18 +16,18 @@ import { prefixer } from 'stylis'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 const cacheRTL = createCache({
     key: 'muirtl',
-    prepend:true,
+    prepend: true,
     stylisPlugins: [prefixer, rtlPlugin]
 })
 const theme = createTheme({
-    direction:'rtl',
+    direction: 'rtl',
     palette: {
         mode: 'dark',
         warning: {
-            main: '#fee715' //changed
+            main: '#fee715'
         },
         secondary: {
-            main: '#af7ce2' //changed
+            main: '#af7ce2'
         },
         primary: {
             main: '#080811'

@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react';
-import { Avatar, Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Unstable_Grid2'
-import cyberPunk from '@/assets/cyberPunk.jpg'
+import cyberPunk from '@/assets/bannerCyberPunk.jpg'
 import styles from '@/styles/homePage/Blogs.module.css'
 import Image from 'next/image';
 import { ArrowBack, ArrowBackIos } from '@mui/icons-material';
@@ -32,7 +37,7 @@ const Blogs = () => {
                                         </Avatar>
                                     </CardMedia>
                                     <CardContent className={styles.cardContent} sx={{ '&.MuiCardContent-root': { padding: { xs: 2, lg: 1 } } }}>
-                                        <Typography sx={{ typography: { xs: 'subtitle2', md: 'h6' }, width: { sm: '550px' }, animation: { xs: 'none', sm: `transform ${randomNumber}s linear infinite` } }}>{item.data}</Typography>
+                                        <Typography sx={{ typography: { xs: 'subtitle2', md: 'h6' }, width: { sm: '560px' }, animation: { xs: 'none', sm: `transform ${randomNumber}s linear infinite` } }}>{item.data}</Typography>
                                         <Typography variant='subtitle2' sx={{ display: { xs: 'none', lg: 'block' } }}>{item.creator}</Typography>
                                         <Typography variant='caption' color='secondary'>{item.date}</Typography>
                                     </CardContent>

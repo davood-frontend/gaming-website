@@ -7,6 +7,11 @@ import MobileHeader from '@/components/MobileHeader'
 import { Box } from '@mui/material'
 import Footer from '@/components/Footer'
 import { StyledEngineProvider } from '@mui/material/styles'
+import localFont from 'next/font/local'
+// const vazir = localFont({
+//   src: './Vazir.woff2',
+//   display: 'swap'
+// })
 const vazir = Vazirmatn({
   subsets: ['arabic', 'latin'],
   display: 'swap',
@@ -25,7 +30,7 @@ export default function RootLayout({ children }) {
             <MainContext>
               <DesktopHeader />
               <MobileHeader />
-              <Box sx={{ backgroundColor: '#101820',zIndex:0,position:'relative' }}>
+              <Box sx={{ backgroundColor: '#101820', zIndex: 0, position: 'relative' }}>
                 {children}
                 <Footer />
               </Box>

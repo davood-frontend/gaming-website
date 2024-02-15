@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCategory from './ProductCategory';
 import Grid from '@mui/material/Unstable_Grid2'
-import { Typography } from '@mui/material'
+import Typography  from '@mui/material/Typography'
 const ProductCategories = () => {
     return (
         <Grid container sx={{ width: 1, px: { xs: '10px', md: '20px', lg: '10%' } }} >

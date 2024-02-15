@@ -1,8 +1,12 @@
 export const rowData = {
     category: {
         category: 'دسته بندی ها',
-        name : 'category',
+        name: 'category',
         list: [
+            {
+                value: 'all',
+                label: 'همه دسته بندی ها'
+            },
             {
                 value: "game",
                 label: "بازی",
@@ -12,19 +16,19 @@ export const rowData = {
                 label: "دیسک",
             },
             {
-                value: "cdKey",
-                label: "سی دی کی",
-            },
-            {
                 value: "giftCard",
                 label: "گیفت کارت",
             }
         ]
     },
-    gameStyles: {
+    styles: {
         category: 'سبک ها',
-        name : 'gameStyle',
+        name: 'style',
         list: [
+            {
+                value: 'all',
+                label: 'همه سبک ها'
+            },
             {
                 value: "battleRoyal",
                 label: "بتل رویال",
@@ -49,10 +53,14 @@ export const rowData = {
     },
     platforms: {
         category: 'پلتفرم ها',
-        name : 'platform',
+        name: 'platform',
         list: [
             {
-                value: 'ps4',
+                value: 'all',
+                label: 'همه پلتفرم ها'
+            },
+            {
+                value: 'ps',
                 label: 'پلی استیشن 4'
             },
             {
@@ -72,8 +80,12 @@ export const rowData = {
     },
     companies: {
         category: 'کمپانی ها',
-        name : 'company',
+        name: 'company',
         list: [
+            {
+                value: 'all',
+                label: 'همه کمپانی ها'
+            },
             {
                 value: 'atari',
                 label: 'آتاری'
@@ -91,7 +103,7 @@ export const rowData = {
                 label: 'راکستار'
             },
             {
-                value: 'soni',
+                value: 'sony',
                 label: 'سونی'
             },
             {
@@ -103,10 +115,6 @@ export const rowData = {
                 label: 'مایکروسافت'
             },
             {
-                value: 'nintendo',
-                label: 'نینتندو'
-            },
-            {
                 value: 'ubisoft',
                 label: 'یوبیسافت'
             },
@@ -114,8 +122,12 @@ export const rowData = {
     },
     priceSorting: {
         category: 'مرتب سازی بر اساس قیمت',
-        name : 'priceSorting',
+        name: 'priceSorting',
         list: [
+            {
+                value: 'default',
+                label: 'پیش فرض'
+            },
             {
                 value: 'mostExpensive',
                 label: 'مرتب سازی بر اساس گران ترین'

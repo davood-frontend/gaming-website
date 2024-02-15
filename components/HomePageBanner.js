@@ -1,6 +1,9 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image';
-import { Box, Avatar, Button, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 import banner from '@/assets/banner.jpg'
 import bannerImage from '@/assets/bannerImage.png'
 import styles from '@/styles/homePage/Banner.module.css'

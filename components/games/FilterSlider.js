@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Slider, Typography } from '@mui/material'
 import styles from '@/styles/games/Main.module.css'
 const numberFormatter = (num) => {
@@ -6,16 +6,15 @@ const numberFormatter = (num) => {
     let formatted = num.toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 3 })
     return formatted
 }
-const FilterSlider = () => {
-    const [value, setValue] = useState([0, 500000])
+const FilterSlider = ({sliderValue,setSliderValue}) => {
     const handleChange = (event, newValue) => {
-        setValue(newValue)
+        setSliderValue(newValue)
     }
-    const min = numberFormatter(value[0])
-    const max = numberFormatter(value[1])
+    const min = numberFormatter(sliderValue[0])
+    const max = numberFormatter(sliderValue[1])
     return (
         <Box className={styles.topFadeBorder} sx={{ px: 2 }}>
-            <Slider color='secondary' min={0} max={500000} step={20000} valueLabelDisplay='auto' value={value} onChange={handleChange} />
+            <Slider color='secondary' min={0} max={500000} step={20000} valueLabelDisplay='auto' value={sliderValue} onChange={handleChange} />
             <Box sx={{ display: 'flex' }}>
                 <Typography sx={{ typography: { xs: 'caption', sm: 'body1' } }}>قیمت : از {min == 0 ? `رایگان` : `${min} تومان`} تا {max == 0 ? 'رایگان' : `${max} تومان`}</Typography>
             </Box>

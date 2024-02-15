@@ -4,8 +4,10 @@ import { Box, Avatar, Card, CardActions, CardContent, CardMedia, Button, Typogra
 import Image from 'next/image';
 import styles from '@/styles/games/Main.module.css'
 const Game = ({ data }) => {
+
+    //if the number is 0 it returns free and if its more, it returns the number 3 by 3 formatted with ","
     const priceFormatter = (num) => {
-        if (num === null) {
+        if (num === 0) {
             return 'رایگان'
         } else {
             num = parseInt(num)
@@ -17,7 +19,7 @@ const Game = ({ data }) => {
     price = priceFormatter(price)
 
     return (
-        <Grid xs={12} smBefore={6} sm={6} smAfter={4} md={4} lg={3}>
+        <Grid xs={12} smBefore={6} smAfter={4}  lg={3}>
             <Card sx={{ borderRadius: 3 }} className={styles.gameCard}>
                 <CardMedia sx={{ p: 2 }}>
                     <Avatar variant='square' sx={{ height: { xs: 200, sm: 250 }, width: 1, borderRadius: 3 }}>

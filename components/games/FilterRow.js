@@ -37,7 +37,7 @@ const FilterRow = ({ data, selectedData, checkOption }) => {
                     return (
                         <FormControlLabel
                             key={index}
-                            sx={{ '&.MuiFormControlLabel-root ': { margin: 0,marginLeft:1,mt:{xs:1,md:0} } }}
+                            sx={{ '&.MuiFormControlLabel-root ': { margin: 0, marginLeft: 1, mt: { xs: 1, md: 0 } } }}
                             control={
                                 <Chip
                                     color={selectedData === radioOption.value ? "secondary" : 'default'}

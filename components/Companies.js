@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Typography, Avatar } from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Avatar from '@mui/material/Avatar'
 import Grid from '@mui/material/Unstable_Grid2'
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
