@@ -1,24 +1,25 @@
-import mortalCombat from '@/assets/mortalCombat.jpg'
-import assassinsCreedOdyssey from '@/assets/assassinsCreedOdyssey.jpg'
-import assassinsCreedSyndicate from '@/assets/assassinsCreedSyndicate.jpg'
-import apexLegend from '@/assets/apexLegend.jpg'
-import devilMayCry from '@/assets/devilMayCry.jpg'
-import fifa from '@/assets/fifa.jpg'
-import pubg from '@/assets/pubg.jpg'
-import theLastOfUs from '@/assets/theLastOfUs.jpg'
-import watchDogs from '@/assets/watchDogs.jpg'
-import godOfWar from '@/assets/godOfWar.jpg'
-import gtaV from '@/assets/gtaV.jpg'
-import battleFieldV from '@/assets/battleFieldV.jpg'
-import cyberPunk from '@/assets/cyberPunk.jpg'
-import residentEvil6 from '@/assets/residentEvil6.jpg'
-import eldenRing from '@/assets/eldenRing.jpg'
-import minecraft from '@/assets/minecraft.jpg'
-import genshinImpact from '@/assets/genshinImpact.jpg'
-import valorant from '@/assets/valorant.jpg'
-import leaugeOfLegends from '@/assets/leaugeOfLegends.jpg'
-import ghostOfTsushima from '@/assets/ghostOfTsushima.jpg'
-import assassinsCreedMirage from '@/assets/assassinsCreedMirage.jpg'
+import mortalCombat from '@/assets/mortalCombat/mortalCombat.jpg'
+import assassinsCreedOdyssey from '@/assets/assassinsCreed/assassinsCreedOdyssey.jpg'
+import assassinsCreedSyndicate from '@/assets/assassinsCreed/assassinsCreedSyndicate.jpg'
+import apexLegend from '@/assets/apexLegend/apexLegend.jpg'
+import devilMayCry from '@/assets/devilMayCry/devilMayCry.jpg'
+import fifa from '@/assets/fifa/fifa.jpg'
+import pubg from '@/assets/pubg/pubg.jpg'
+import theLastOfUs from '@/assets/theLastOfUs/theLastOfUs.jpg'
+import watchDogs from '@/assets/watchDogs/watchDogs.jpg'
+import godOfWar from '@/assets/godOfWar/godOfWar.jpg'
+import gtaV from '@/assets/gtaV/gtaV.jpg'
+import battleFieldV from '@/assets/battleFieldV/battleFieldV.jpg'
+import cyberPunk from '@/assets/cyberPunk/cyberPunk.jpg'
+import residentEvil6 from '@/assets/residentEvil6/residentEvil6.jpg'
+import eldenRing from '@/assets/eldenRing/eldenRing.jpg'
+import minecraft from '@/assets/minecraft/minecraft.jpg'
+import genshinImpact from '@/assets/genshinImpact/genshinImpact.webp'
+import valorant from '@/assets/valorant/valorant.jpg'
+import leaugeOfLegends from '@/assets/leaugeOfLegends/leaugeOfLegends.jpg'
+import ghostOfTsushima from '@/assets/ghostOfTsushima/ghostOfTsushima.jpg'
+import assassinsCreedMirage from '@/assets/assassinsCreed/assassinsCreedMirage.jpg'
+
 export const games = [
     {
         name: 'اساسینز کرید سیندیکیت',
@@ -28,7 +29,8 @@ export const games = [
         category: 'game',
         style: 'historical',
         platforms: ['ps', 'xbox', 'pc'],
-        company: 'ubisoft'
+        company: 'ubisoft',
+        englishName: 'assassinsCreedSyndicate',
     },
     {
         name: "لیگ آف لجندز",
@@ -38,7 +40,8 @@ export const games = [
         category: "giftCard",
         style: "hackAndSlash",
         platforms: ["ps", "pc", "xbox"],
-        company: "epicGames"
+        company: "epicGames",
+        englishName: 'leaugeOfLegends',
     },
     {
         name: 'جی تی ای 5',
@@ -48,7 +51,8 @@ export const games = [
         category: 'disk',
         style: 'openWorld',
         platforms: ['ps', 'xbox', 'pc'],
-        company: 'rockStar'
+        company: 'rockStar',
+        englishName: 'gtaV',
     },
     {
         name: "ماینکرفت",
@@ -58,7 +62,8 @@ export const games = [
         category: "game",
         style: "openWorld",
         platforms: ["pc", "ps", 'xbox'],
-        company: "microsoft"
+        company: "microsoft",
+        englishName: 'minecraft',
     },
     {
         name: 'خدای جنگ',
@@ -68,7 +73,8 @@ export const games = [
         category: 'game',
         style: 'hackAndSlash',
         platforms: ['ps'],
-        company: 'sony'
+        company: 'sony',
+        englishName: 'godOfWar',
     },
     {
         name: "گوست آف تسوشیما",
@@ -78,7 +84,8 @@ export const games = [
         category: "game",
         style: "shooter",
         platforms: ["ps"],
-        company: "epicGames"
+        company: "epicGames",
+        englishName: 'ghostOfTsushima',
     },
     {
         name: 'ایپکس لجند',
@@ -88,7 +95,8 @@ export const games = [
         category: 'giftCard',
         style: 'battleRoyal',
         platforms: ['ps', 'pc', 'nintendo', 'xbox'],
-        company: 'electronicArts'
+        company: 'electronicArts',
+        englishName: 'apexLegend',
     },
     {
         name: 'لست آف اس 2',
@@ -98,7 +106,8 @@ export const games = [
         category: 'game',
         style: 'shooter',
         platforms: ['ps'],
-        company: 'sony'
+        company: 'sony',
+        englishName: 'theLastOfUs',
     },
     {
         name: "گنشین ایمپکت",
@@ -108,7 +117,8 @@ export const games = [
         category: "giftCard",
         style: "openWorld",
         platforms: ["ps"],
-        company: "epicGames"
+        company: "epicGames",
+        englishName: 'genshinImpact',
     },
     {
         name: 'پابجی',
@@ -118,7 +128,8 @@ export const games = [
         category: 'giftCard',
         style: 'battleRoyal',
         platforms: ['xbox', 'ps', 'pc'],
-        company: 'sony'
+        company: 'sony',
+        englishName: 'pubg',
     },
     {
         name: 'مورتال کامبت 11',
@@ -128,7 +139,8 @@ export const games = [
         category: 'disk',
         style: 'fighting',
         platforms: ['nintendo', 'pc', 'ps', 'xbox'],
-        company: 'electronicArts'
+        company: 'electronicArts',
+        englishName: 'mortalCombat',
     },
     {
         name: 'بتلفیلد 5',
@@ -138,7 +150,8 @@ export const games = [
         category: 'game',
         style: 'shooter',
         platforms: ['xbox', 'ps', 'pc'],
-        company: 'electronicArts'
+        company: 'electronicArts',
+        englishName: 'battleFieldV',
     },
     {
         name: 'فیفا 2020',
@@ -148,7 +161,8 @@ export const games = [
         category: 'disk',
         style: 'sports',
         platforms: ['xbox', 'ps', 'pc', 'nintendo'],
-        company: 'electronicArts'
+        company: 'electronicArts',
+        englishName: 'fifa',
     },
     {
         name: "اساسینز کرید میراج",
@@ -158,7 +172,8 @@ export const games = [
         category: "game",
         style: "historical",
         platforms: ["pc"],
-        company: "ubisoft"
+        company: "ubisoft",
+        englishName: 'assassinsCreedMirage',
     },
     {
         name: 'دویل می کرای 5',
@@ -168,7 +183,8 @@ export const games = [
         category: 'disk',
         style: 'hackAndSlash',
         platforms: ['xbox', 'ps', 'pc'],
-        company: 'capcom'
+        company: 'capcom',
+        englishName: 'devilMayCry',
     },
 
     {
@@ -179,7 +195,8 @@ export const games = [
         category: 'game',
         style: 'historical',
         platforms: ['xbox', 'ps', 'pc', 'nintendo'],
-        company: 'ubisoft'
+        company: 'ubisoft',
+        englishName: 'assassinsCreedOdyssey',
     },
     {
         name: 'واچ داگز 2',
@@ -189,7 +206,8 @@ export const games = [
         category: 'game',
         style: 'openWorld',
         platforms: ['xbox', 'ps', 'pc'],
-        company: 'ubisoft'
+        company: 'ubisoft',
+        englishName: 'watchDogs',
     },
 
     {
@@ -200,7 +218,8 @@ export const games = [
         category: "disk",
         style: "openWorld",
         platforms: ["pc", "ps", "xbox"],
-        company: "atari"
+        company: "atari",
+        englishName: 'cyberPunk',
     },
     {
         name: "رزیدنت اویل 6",
@@ -210,7 +229,8 @@ export const games = [
         category: "disk",
         style: "shooter",
         platforms: ["pc", "ps", "xbox"],
-        company: "capcom"
+        company: "capcom",
+        englishName: 'residentEvil6',
     },
 
     {
@@ -221,7 +241,8 @@ export const games = [
         category: "game",
         style: "openWorld",
         platforms: ["pc", "ps", "xbox"],
-        company: "sony"
+        company: "sony",
+        englishName: 'eldenRing',
     },
     {
         name: "والورانت",
@@ -231,11 +252,7 @@ export const games = [
         category: "giftCard",
         style: "battleRoyal",
         platforms: ["ps", "pc"],
-        company: "epicGames"
+        company: "epicGames",
+        englishName: 'valorant',
     },
-
-
-
-
-
 ]

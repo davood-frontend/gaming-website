@@ -6,7 +6,7 @@ import Games from '@/components/games/Games';
 import BackGround from '@/components/games/BackGround';
 import PaginationComponent from '@/components/games/PaginationComponent';
 import { games } from '@/constants/games';
-const page = () => {
+const GamesPage = () => {
     const [filteredData, setFilteredData] = useState(games)
     const [currentItems, setCurrentItems] = useState(games)
     useEffect(() => {
@@ -28,4 +28,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default GamesPage;

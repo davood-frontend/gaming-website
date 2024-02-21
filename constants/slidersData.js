@@ -1,17 +1,15 @@
-import mortalCombat from '@/assets/mortalCombat.jpg'
-import assassinsCreed from '@/assets/assassinsCreed.jpg'
-import assassinsCreedOdyssey from '@/assets/assassinsCreedOdyssey.jpg'
-import assassinsCreedSyndicate from '@/assets/assassinsCreedSyndicate.jpg'
-import apexLegend from '@/assets/apexLegend.jpg'
-import devilMayCry from '@/assets/devilMayCry.jpg'
-import fifa from '@/assets/fifa.jpg'
-import ps4slim from '@/assets/ps4slim.jpg'
-import psVr from '@/assets/psVr.jpg'
-import pubg from '@/assets/pubg.jpg'
-import theLastOfUs from '@/assets/theLastOfUs.jpg'
-import watchDogs from '@/assets/watchDogs.jpg'
-import xbox1 from '@/assets/xbox1.jpg'
-import xboxController from '@/assets/xboxController.jpg'
+import mortalCombat from '@/assets/mortalCombat/mortalCombat.jpg'
+import assassinsCreedOdyssey from '@/assets/assassinsCreed/assassinsCreedOdyssey.jpg'
+import assassinsCreedSyndicate from '@/assets/assassinsCreed/assassinsCreedSyndicate.jpg'
+import apexLegend from '@/assets/apexLegend/apexLegend.jpg'
+import devilMayCry from '@/assets/devilMayCry/devilMayCry.jpg'
+import fifa from '@/assets/fifa/fifa.jpg'
+import ps4slim from '@/assets/consols/ps4slim.jpg'
+import psVr from '@/assets/consols/psVr.jpg'
+import pubg from '@/assets/pubg/pubg.jpg'
+import theLastOfUs from '@/assets/theLastOfUs/theLastOfUs.jpg'
+import xbox1 from '@/assets/consols/xbox1.jpg'
+import xboxController from '@/assets/consols/xboxController.jpg'
 import eaSports from '@/assets/companies/eaSports.png'
 import epicGames from '@/assets/companies/epicGames.png'
 import rockStar from '@/assets/companies/rockStar.png'
@@ -20,8 +18,8 @@ import atari from '@/assets/companies/atari.png'
 import nintendo from '@/assets/companies/nintendo.png'
 import CodBlackOps from '@/assets/CodBlackOps.png'
 import batmanArkham from '@/assets/batmanArkham.jpg'
-import theLastOfUs1 from '@/assets/theLastOfUs1.jpg'
-import watchDogs2 from '@/assets/watchDogs2.jpg'
+import theLastOfUs1 from '@/assets/theLastOfUs/theLastOfUs1.jpg'
+import watchDogs2 from '@/assets/watchDogs/watchDogs2.jpg'
 export const latestSwiper = {
     SliderInfo: {
         title: 'آخرین محصولات',
@@ -279,25 +277,25 @@ export const companiesData = [
 ]
 export const BlogsData = [
     {
-        image : CodBlackOps,
+        image: CodBlackOps,
         data: 'دلایل عدم موفقیت Call Of Duty Black Ops 4',
         creator: 'مدیریت',
         date: '01 شهریور 1399',
     },
     {
-        image : watchDogs2,
+        image: watchDogs2,
         data: 'پیش نمایش بازی Watch Dogs 2',
         creator: 'کاربر ویژه',
         date: '18 دی 1400',
     },
     {
-        image : batmanArkham,
+        image: batmanArkham,
         data: 'بازی Batman : Arkham Night معرفی شد',
         creator: 'کاربر ساده',
         date: '11 خرداد 1400'
     },
     {
-        image : theLastOfUs1,
+        image: theLastOfUs1,
         data: 'دموی The Last Of Us 2 در کنفرانس Pax East 2020 قابل بازی خواهد بود',
         creator: 'مدیریت',
         date: '1 شهریور 1399'

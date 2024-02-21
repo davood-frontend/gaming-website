@@ -1,9 +1,9 @@
 'use client'
-import { createContext, useEffect, useState } from "react";
-import assassinsCreed from '@/assets/assassinsCreed.jpg'
-import watchDogs from '@/assets/watchDogs.jpg'
-import devilMayCry from '@/assets/devilMayCry.jpg'
-import devilMayCrySmall from '@/assets/devilMayCrySmall.jpg'
+import { createContext, useState } from "react";
+import assassinsCreed from '@/assets/assassinsCreed/assassinsCreed.jpg'
+import watchDogs from '@/assets/watchDogs/watchDogs.jpg'
+import devilMayCry from '@/assets/devilMayCry/devilMayCry.jpg'
+import devilMayCrySmall from '@/assets/devilMayCry/devilMayCrySmall.jpg'
 export const Context = createContext({
     homePageHero: '',
     setHomePageHero: () => { },

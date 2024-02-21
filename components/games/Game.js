@@ -3,7 +3,8 @@ import Grid from '@mui/material/Unstable_Grid2'
 import { Box, Avatar, Card, CardActions, CardContent, CardMedia, Button, Typography, Divider } from '@mui/material';
 import Image from 'next/image';
 import styles from '@/styles/games/Main.module.css'
-const Game = ({ data }) => {
+import Link from 'next/link';
+const Game = ({ data, id }) => {
 
     //if the number is 0 it returns free and if its more, it returns the number 3 by 3 formatted with ","
     const priceFormatter = (num) => {
@@ -15,11 +16,11 @@ const Game = ({ data }) => {
             return formatted + ' هزار تومان'
         }
     }
-    let { price, type, image, name } = data
+    let { price, type, image, name, englishName } = data
     price = priceFormatter(price)
 
     return (
-        <Grid xs={12} smBefore={6} smAfter={4}  lg={3}>
+        <Grid xs={12} smBefore={6} smAfter={4} lg={3}>
             <Card sx={{ borderRadius: 3 }} className={styles.gameCard}>
                 <CardMedia sx={{ p: 2 }}>
                     <Avatar variant='square' sx={{ height: { xs: 200, sm: 250 }, width: 1, borderRadius: 3 }}>
@@ -37,10 +38,12 @@ const Game = ({ data }) => {
                     </Box>
                 </CardContent>
                 <CardActions sx={{ p: 1.5 }}>
-                    <Button variant='contained' fullWidth className={styles.bgHover}>مشاهده محصول</Button>
+                    <Link href={`games/${englishName}`} style={{width : '100%'}}>
+                        <Button variant='contained' fullWidth className={styles.bgHover}>مشاهده محصول</Button>
+                    </Link>
                 </CardActions>
             </Card>
-        </Grid>
+        </Grid >
     );
 };
 

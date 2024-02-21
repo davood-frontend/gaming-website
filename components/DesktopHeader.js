@@ -16,7 +16,7 @@ const CostumNextLink = ({ href, children }) => {
         </Link>
     )
 }
-const CostumIconButton = ({ Icon, color, size ,href}) => {
+const CostumIconButton = ({ Icon, color, size, href }) => {
     return (
         <Link href={href || ''}>
             <IconButton size={size || 'small'} color={color || 'default'}>
@@ -68,20 +68,20 @@ const DesktopHeader = () => {
                                     <CostumIconButton href='/' Icon={HomeOutlined} size='medium' color='secondary' />
                                 </Box>
                                 <Box sx={{ display: 'flex', marginLeft: 3, gap: 4, alignItems: 'center' }}>
-                                    <CostumNextLink href='shop'>
+                                    <CostumNextLink href='/shop'>
                                         فروشگاه
                                     </CostumNextLink>
 
-                                    <CostumNextLink href='consols'>
+                                    <CostumNextLink href='/consols'>
                                         کنسول ها
                                     </CostumNextLink>
-                                    <CostumNextLink href='games'>
+                                    <CostumNextLink href='/games'>
                                         بازی
                                     </CostumNextLink>
-                                    <CostumNextLink href='equipments'>
+                                    <CostumNextLink href='/equipments'>
                                         لوازم جانبی
                                     </CostumNextLink>
-                                    <CostumNextLink href='about'>
+                                    <CostumNextLink href='/about'>
                                         درباره ما
                                     </CostumNextLink>
                                 </Box>

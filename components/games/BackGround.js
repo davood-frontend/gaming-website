@@ -1,6 +1,7 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
-import backGround from '@/assets/assassinsCreedSyndicateBg.jpg'
+import backGround from '@/assets/assassinsCreed/assassinsCreedSyndicateBg.jpg'
 import { Box, Avatar } from '@mui/material';
 
 const BackGround = () => {
