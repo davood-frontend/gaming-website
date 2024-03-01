@@ -16,7 +16,7 @@ const Game = ({ data, id }) => {
             return formatted + ' هزار تومان'
         }
     }
-    let { price, type, image, name, englishName } = data
+    let { price, type, image, name, slug } = data
     price = priceFormatter(price)
 
     return (
@@ -38,7 +38,7 @@ const Game = ({ data, id }) => {
                     </Box>
                 </CardContent>
                 <CardActions sx={{ p: 1.5 }}>
-                    <Link href={`games/${englishName}`} style={{width : '100%'}}>
+                    <Link href={`games/${slug}`} style={{ width: '100%' }}>
                         <Button variant='contained' fullWidth className={styles.bgHover}>مشاهده محصول</Button>
                     </Link>
                 </CardActions>

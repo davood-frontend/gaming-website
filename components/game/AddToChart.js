@@ -10,7 +10,7 @@ import support from '@/assets/icons/support.png'
 import delivery from '@/assets/icons/delivery.png'
 import Grid from '@mui/material/Unstable_Grid2'
 import Image from 'next/image';
-const data = [
+const infoData = [
     {
         title: 'ضمانت',
         caption: 'تضمین محصولات',
@@ -27,11 +27,17 @@ const data = [
         icon: support
     },
 ]
-const AddToChart = () => {
+const numberFormatter = (num) => {
+    num = parseInt(num)
+    let formatted = num.toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 3 })
+    return formatted
+}
+const AddToChart = ({ data }) => {
+    const price = numberFormatter(data.price)
     return (
         <Grid sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: 2, my: 4, color: 'white' }} container>
             <Grid xs={12} md={9} container>
-                {data.map((item, index) => (
+                {infoData.map((item, index) => (
                     <Grid sx={{ display: 'flex', py: 2 }} xs={12} sm={4} key={index}>
                         <Avatar variant='rounded' sx={{ backgroundColor: 'transparent', height: 50, width: 50, marginRight: 2 }}>
                             <Image fill style={{ objectFit: 'contain' }} src={item.icon} />
@@ -53,10 +59,10 @@ const AddToChart = () => {
             <Grid xs={12} md={3} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around', paddingLeft: { xs: 0, md: 4 }, paddingTop: { xs: 3, md: 0 } }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: { xs: 2, md: 0 } }}>
                     <Typography>قیمت : </Typography>
-                    <Typography>300.000 تومان</Typography>
+                    <Typography>{price == 0 ? 'رایگان' : `${price} تومان`}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <TextField size='small' variant='standard' sx={{ backgroundColor: '#192531', borderRadius: 1, pt: 0.5, px: 1, flexBasis: '20%', '&.MuiFormControl-root': { my: 'auto' } }} InputProps={{ disableUnderline: true, inputProps: { min: 1, max: 10 } }} />
+                    <TextField defaultValue={1} size='small' variant='standard' sx={{ backgroundColor: '#192531', borderRadius: 1, pt: 0.5, px: 1, flexBasis: '20%', '&.MuiFormControl-root': { my: 'auto' } }} InputProps={{ disableUnderline: true, inputProps: { min: 1, max: 10 } }} />
                     <Button variant='contained' color='secondary' sx={{ flexBasis: '75%', boxShadow: '0 0 10px rgba(254, 231, 21, 0.5)' }}>خرید</Button>
                 </Box>
             </Grid>

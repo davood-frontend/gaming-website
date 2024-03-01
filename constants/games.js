@@ -30,7 +30,7 @@ export const games = [
         style: 'historical',
         platforms: ['ps', 'xbox', 'pc'],
         company: 'ubisoft',
-        englishName: 'assassinsCreedSyndicate',
+        slug: 'assassinsCreedSyndicate',
     },
     {
         name: "لیگ آف لجندز",
@@ -41,7 +41,7 @@ export const games = [
         style: "hackAndSlash",
         platforms: ["ps", "pc", "xbox"],
         company: "epicGames",
-        englishName: 'leaugeOfLegends',
+        slug: 'leaugeOfLegends',
     },
     {
         name: 'جی تی ای 5',
@@ -52,7 +52,7 @@ export const games = [
         style: 'openWorld',
         platforms: ['ps', 'xbox', 'pc'],
         company: 'rockStar',
-        englishName: 'gtaV',
+        slug: 'gtaV',
     },
     {
         name: "ماینکرفت",
@@ -63,7 +63,7 @@ export const games = [
         style: "openWorld",
         platforms: ["pc", "ps", 'xbox'],
         company: "microsoft",
-        englishName: 'minecraft',
+        slug: 'minecraft',
     },
     {
         name: 'خدای جنگ',
@@ -74,7 +74,7 @@ export const games = [
         style: 'hackAndSlash',
         platforms: ['ps'],
         company: 'sony',
-        englishName: 'godOfWar',
+        slug: 'godOfWar',
     },
     {
         name: "گوست آف تسوشیما",
@@ -85,7 +85,7 @@ export const games = [
         style: "shooter",
         platforms: ["ps"],
         company: "epicGames",
-        englishName: 'ghostOfTsushima',
+        slug: 'ghostOfTsushima',
     },
     {
         name: 'ایپکس لجند',
@@ -96,7 +96,7 @@ export const games = [
         style: 'battleRoyal',
         platforms: ['ps', 'pc', 'nintendo', 'xbox'],
         company: 'electronicArts',
-        englishName: 'apexLegend',
+        slug: 'apexLegend',
     },
     {
         name: 'لست آف اس 2',
@@ -107,7 +107,7 @@ export const games = [
         style: 'shooter',
         platforms: ['ps'],
         company: 'sony',
-        englishName: 'theLastOfUs',
+        slug: 'theLastOfUs',
     },
     {
         name: "گنشین ایمپکت",
@@ -118,7 +118,7 @@ export const games = [
         style: "openWorld",
         platforms: ["ps"],
         company: "epicGames",
-        englishName: 'genshinImpact',
+        slug: 'genshinImpact',
     },
     {
         name: 'پابجی',
@@ -129,7 +129,7 @@ export const games = [
         style: 'battleRoyal',
         platforms: ['xbox', 'ps', 'pc'],
         company: 'sony',
-        englishName: 'pubg',
+        slug: 'pubg',
     },
     {
         name: 'مورتال کامبت 11',
@@ -140,7 +140,7 @@ export const games = [
         style: 'fighting',
         platforms: ['nintendo', 'pc', 'ps', 'xbox'],
         company: 'electronicArts',
-        englishName: 'mortalCombat',
+        slug: 'mortalCombat',
     },
     {
         name: 'بتلفیلد 5',
@@ -151,7 +151,7 @@ export const games = [
         style: 'shooter',
         platforms: ['xbox', 'ps', 'pc'],
         company: 'electronicArts',
-        englishName: 'battleFieldV',
+        slug: 'battleFieldV',
     },
     {
         name: 'فیفا 2020',
@@ -162,7 +162,7 @@ export const games = [
         style: 'sports',
         platforms: ['xbox', 'ps', 'pc', 'nintendo'],
         company: 'electronicArts',
-        englishName: 'fifa',
+        slug: 'fifa',
     },
     {
         name: "اساسینز کرید میراج",
@@ -173,7 +173,7 @@ export const games = [
         style: "historical",
         platforms: ["pc"],
         company: "ubisoft",
-        englishName: 'assassinsCreedMirage',
+        slug: 'assassinsCreedMirage',
     },
     {
         name: 'دویل می کرای 5',
@@ -184,7 +184,7 @@ export const games = [
         style: 'hackAndSlash',
         platforms: ['xbox', 'ps', 'pc'],
         company: 'capcom',
-        englishName: 'devilMayCry',
+        slug: 'devilMayCry',
     },
 
     {
@@ -196,7 +196,7 @@ export const games = [
         style: 'historical',
         platforms: ['xbox', 'ps', 'pc', 'nintendo'],
         company: 'ubisoft',
-        englishName: 'assassinsCreedOdyssey',
+        slug: 'assassinsCreedOdyssey',
     },
     {
         name: 'واچ داگز 2',
@@ -207,7 +207,7 @@ export const games = [
         style: 'openWorld',
         platforms: ['xbox', 'ps', 'pc'],
         company: 'ubisoft',
-        englishName: 'watchDogs',
+        slug: 'watchDogs',
     },
 
     {
@@ -219,7 +219,7 @@ export const games = [
         style: "openWorld",
         platforms: ["pc", "ps", "xbox"],
         company: "atari",
-        englishName: 'cyberPunk',
+        slug: 'cyberPunk',
     },
     {
         name: "رزیدنت اویل 6",
@@ -230,7 +230,7 @@ export const games = [
         style: "shooter",
         platforms: ["pc", "ps", "xbox"],
         company: "capcom",
-        englishName: 'residentEvil6',
+        slug: 'residentEvil6',
     },
 
     {
@@ -242,7 +242,7 @@ export const games = [
         style: "openWorld",
         platforms: ["pc", "ps", "xbox"],
         company: "sony",
-        englishName: 'eldenRing',
+        slug: 'eldenRing',
     },
     {
         name: "والورانت",
@@ -253,6 +253,6 @@ export const games = [
         style: "battleRoyal",
         platforms: ["ps", "pc"],
         company: "epicGames",
-        englishName: 'valorant',
+        slug: 'valorant',
     },
 ]

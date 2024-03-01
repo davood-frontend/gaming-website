@@ -7,50 +7,52 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2'
-const SetComment = () => {
+const SetComment = ({ commentHandler, data, ratingHandler, submitForm }) => {
     return (
         <Box>
-            <Typography variant='h6' sx={{ mb: 1 }} color='secondary'>
-                اولین دیدگاه دهنده باشید "گنشین ایمپکت"
-            </Typography>
-            <Box>
-                <Typography sx={{ mb: 1 }}>
-                    عنوان دیدگاه
+            <form onSubmit={submitForm}>
+                <Typography variant='h6' sx={{ mb: 1 }} color='secondary'>
+                    {data && data.comments == null ? `ثبت اولین دیدگاه برای  "${data.title}"` : `ثبت دیدگاه برای  "${data.title}"`}
                 </Typography>
-                <TextField fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
-            </Box>
-            <Box sx={{ my: 2 }}>
-                <Typography>امتیاز شما</Typography>
-                <Rating sx={{ '& .MuiRating-iconFilled': { color: '#af7ce2' } }} />
-            </Box>
-            <Box>
-                <Typography sx={{ mb: 1 }}>
-                    دیدگاه شما
-                </Typography>
-                <TextField rows={4} multiline fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
-            </Box>
-            <Grid container columnSpacing={2} sx={{ my: 3 }}>
-                <Grid xs={12} sm={6}>
+                <Box>
                     <Typography sx={{ mb: 1 }}>
-                        نام
+                        عنوان دیدگاه
                     </Typography>
-                    <TextField fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
-                </Grid>
-                <Grid xs={12} sm={6}>
-                    <Typography sx={{ mb: 1, mt: { xs: 1, sm: 0 } }}>
-                        ایمیل
+                    <TextField required name='title' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                </Box>
+                <Box sx={{ my: 2 }}>
+                    <Typography>امتیاز شما</Typography>
+                    <Rating sx={{ '& .MuiRating-iconFilled': { color: '#af7ce2' } }} onChange={(event, newValue) => { ratingHandler(newValue) }} />
+                </Box>
+                <Box>
+                    <Typography sx={{ mb: 1 }}>
+                        دیدگاه شما
                     </Typography>
-                    <TextField fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                    <TextField required name='comment' onChange={commentHandler} rows={4} multiline fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                </Box>
+                <Grid container columnSpacing={2} sx={{ my: 3 }}>
+                    <Grid xs={12} sm={6}>
+                        <Typography sx={{ mb: 1 }}>
+                            نام
+                        </Typography>
+                        <TextField required name='writer' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                    </Grid>
+                    <Grid xs={12} sm={6}>
+                        <Typography sx={{ mb: 1, mt: { xs: 1, sm: 0 } }}>
+                            ایمیل
+                        </Typography>
+                        <TextField required name='email' type='email' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Box>
-                <FormControlLabel control={<Checkbox color='secondary' />} label='ذخیره نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره دیدگاهی مینویسم' />
-            </Box>
-            <Box sx={{ mt: 2 }}>
-                <Button color='secondary' variant='contained' sx={{ boxShadow: '0 0 10px rgba(254, 231, 21, 0.3)' }}>
-                    ثبت
-                </Button>
-            </Box>
+                <Box>
+                    <FormControlLabel control={<Checkbox color='secondary' />} label='ذخیره نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره دیدگاهی مینویسم' />
+                </Box>
+                <Box sx={{ mt: 2 }}>
+                    <Button color='secondary' type='submit' variant='contained' sx={{ boxShadow: '0 0 10px rgba(254, 231, 21, 0.3)' }}>
+                        ثبت
+                    </Button>
+                </Box>
+            </form>
         </Box>
 
     );

@@ -6,9 +6,14 @@ import Games from '@/components/games/Games';
 import BackGround from '@/components/games/BackGround';
 import PaginationComponent from '@/components/games/PaginationComponent';
 import { games } from '@/constants/games';
+import useSWR from 'swr';
+import Loading from '@/components/general/Loading';
+import Error from '@/components/general/Error';
 const GamesPage = () => {
-    const [filteredData, setFilteredData] = useState(games)
-    const [currentItems, setCurrentItems] = useState(games)
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const { data, error, isLoading } = useSWR('/api/games', fetcher)
+    const [filteredData, setFilteredData] = useState()
+    const [currentItems, setCurrentItems] = useState()
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -16,13 +21,33 @@ const GamesPage = () => {
             behavior: "smooth"
         });
     }, [currentItems])
+    useEffect(() => {
+        if (!isLoading) {
+            setCurrentItems(data)
+            setFilteredData(data)
+        }
+    }, [isLoading])
+
+    if (error) {
+        return <Error />
+    }
+
+    console.log(currentItems);
     return (
         <Box>
             <Box sx={{ position: 'relative' }}>
                 <BackGround />
-                <Filter data={games} setData={setFilteredData} />
-                <Games data={currentItems} />
-                <PaginationComponent data={filteredData} itemsPerPage={8} setCurrentItems={setCurrentItems} />
+                <Filter data={data} setData={setFilteredData} />
+                {
+                    !currentItems ? (
+                        <Loading pt={10} />
+                    ) : (
+                        <>
+                            <Games data={currentItems} />
+                            <PaginationComponent data={filteredData} itemsPerPage={8} setCurrentItems={setCurrentItems} />
+                        </>
+                    )
+                }
             </Box>
         </Box >
     );
