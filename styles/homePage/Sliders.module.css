@@ -44,7 +44,7 @@
 .swiperSlide {
     display: flex;
     justify-content: center;
-    width: 290px;
+    width: 290px !important;
     padding: 15px 0;
 }
 

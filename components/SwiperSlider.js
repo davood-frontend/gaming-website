@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'
 import { grey } from '@mui/material/colors';
@@ -11,7 +11,10 @@ import styles from '@/styles/homePage/Sliders.module.css'
 
 const SwiperSlider = ({ data, delay }) => {
     const { sliderItems, SliderInfo } = data
-
+    const [slidePerView, setSlidePerView] = useState('auto')
+    useEffect(() => {
+        setSlidePerView('auto')
+    }, [])
     return (
         <Box sx={{ marginTop: 13 }}>
             <Box className={styles.titleHolder}>
@@ -23,7 +26,7 @@ const SwiperSlider = ({ data, delay }) => {
                     <Typography sx={{ color: grey[500] }} variant='subtitle2'>{SliderInfo.desc}</Typography>
                 </Box>
             </Box>
-            <Swiper slidesPerView={'auto'} speed={1000} spaceBetween={30} pagination={{ clickable: true }} loop={true} modules={[Autoplay]} autoplay={{ delay }}>
+            <Swiper slidesPerView='auto' speed={1000} spaceBetween={30} pagination={{ clickable: true }} loop={true} modules={[Autoplay]} autoplay={{ delay }}>
                 {sliderItems.map((item, index) => (
                     <SwiperSlide key={index} className={styles.swiperSlide} >
                         <Box className={styles.swiperSlideBox}>
@@ -45,7 +48,7 @@ const SwiperSlider = ({ data, delay }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </Box>
+        </Box >
     );
 };
 

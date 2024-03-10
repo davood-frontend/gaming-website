@@ -32,7 +32,6 @@ const GamesPage = () => {
         return <Error />
     }
 
-    console.log(currentItems);
     return (
         <Box>
             <Box sx={{ position: 'relative' }}>

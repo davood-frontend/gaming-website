@@ -1,14 +1,14 @@
 'use client'
 import { Vazirmatn } from 'next/font/google'
 import localFont from 'next/font/local'
-const vazir = localFont({
-    src: '../app/Vazir.woff2',
-    display: 'swap'
-})
-// const vazir = Vazirmatn({
-//     subsets: ['arabic', 'latin'],
-//     display: 'swap',
+// const vazir = localFont({
+//     src: '../app/Vazir.woff2',
+//     display: 'swap'
 // })
+const vazir = Vazirmatn({
+    subsets: ['arabic', 'latin'],
+    display: 'swap',
+})
 import rtlPlugin from 'stylis-plugin-rtl'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
@@ -58,8 +58,7 @@ const theme = createTheme({
             lg: 1200,
             xl: 1900
         }
-    }
-
+    },
 
 })
 

@@ -63,3 +63,24 @@
   right: 0;
   background-color: #af7ce2;
 }
+
+.swiper-pagination {
+  position: relative;
+  top: 360px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #af7ce2 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #af7ce2 !important;
+
+}
+
+.swiper-pagination-bullet {
+  border: 2px solid #af7ce2;
+  padding: 3px !important;
+}
+
