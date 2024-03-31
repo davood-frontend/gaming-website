@@ -86,10 +86,9 @@ const DesktopHeader = () => {
                                     </CostumNextLink>
                                 </Box>
                                 <Box sx={{ color: 'white', marginLeft: 2 }}>
-                                    <CostumIconButton Icon={AutoStoriesOutlined} size='medium' color='secondary' />
+                                    <CostumIconButton Icon={AutoStoriesOutlined} href='blogs' size='medium' color='secondary' />
 
-                                    <CostumIconButton Icon={HeadsetMicOutlined} size='medium' color='secondary' />
-
+                                    <CostumIconButton Icon={HeadsetMicOutlined} href='contact' size='medium' color='secondary' />
                                 </Box>
                             </Grid>
 
