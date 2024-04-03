@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'
 import { grey } from '@mui/material/colors';
@@ -11,10 +11,7 @@ import styles from '@/styles/homePage/Sliders.module.css'
 
 const SwiperSlider = ({ data, delay }) => {
     const { sliderItems, SliderInfo } = data
-    const [slidePerView, setSlidePerView] = useState('auto')
-    useEffect(() => {
-        setSlidePerView('auto')
-    }, [])
+  
     return (
         <Box sx={{ marginTop: 13 }}>
             <Box className={styles.titleHolder}>

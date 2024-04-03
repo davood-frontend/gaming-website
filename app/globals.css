@@ -11,7 +11,9 @@
   border-radius: 0.5rem;
 
 }
-
+a{
+  text-decoration: none;
+}
 .assassin {
   animation: assassinAnimation 0.7s ease forwards;
   object-fit: cover;

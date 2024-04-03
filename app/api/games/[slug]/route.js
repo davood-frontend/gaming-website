@@ -3,8 +3,7 @@ import { NextResponse } from "next/server"
 import Game from "@/app/models/Game"
 
 export const GET = async (request, { params }) => {
-    const { slug } = params
-    console.log(slug);
+    const { slug } = params;
     try {
         await connect()
         const games = await Game.findOne({ slug: slug })
