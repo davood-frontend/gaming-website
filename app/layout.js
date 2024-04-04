@@ -7,6 +7,7 @@ import MobileHeader from '@/components/MobileHeader'
 import { Box } from '@mui/material'
 import Footer from '@/components/Footer'
 import { StyledEngineProvider } from '@mui/material/styles'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import localFont from 'next/font/local'
 // const vazir = localFont({
 //   src: './Vazir.woff2',
@@ -25,18 +26,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR" dir='rtl' className={vazir.className}>
       <body>
-        <StyledEngineProvider injectFirst>
-          <MainTheme>
-            <MainContext>
-              <DesktopHeader />
-              <MobileHeader />
-              <Box sx={{ backgroundColor: '#101820', zIndex: 0, position: 'relative' }}>
-                {children}
-                <Footer />
-              </Box>
-            </MainContext>
-          </MainTheme>
-        </StyledEngineProvider>
+        <AppRouterCacheProvider>
+          <StyledEngineProvider injectFirst>
+            <MainTheme>
+              <MainContext>
+                <DesktopHeader />
+                <MobileHeader />
+                <Box sx={{ backgroundColor: '#101820', zIndex: 0, position: 'relative' }}>
+                  {children}
+                  <Footer />
+                </Box>
+              </MainContext>
+            </MainTheme>
+          </StyledEngineProvider>
+        </AppRouterCacheProvider>
       </body>
     </html >
   )

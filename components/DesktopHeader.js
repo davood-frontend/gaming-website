@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { AppBar, Toolbar, Container, Typography, Box, Divider, IconButton, TextField, InputAdornment } from '@mui/material'
+import { AppBar, Toolbar, Container, Typography, Box, Divider, IconButton, Tooltip } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import Logo from '@/assets/headerLogo.png'
 import Image from 'next/image';
@@ -16,12 +16,14 @@ const CostumNextLink = ({ href, children }) => {
         </Link>
     )
 }
-const CostumIconButton = ({ Icon, color, size, href }) => {
+const CostumIconButton = ({ Icon, color, size, href, desc }) => {
     return (
         <Link href={href || ''}>
-            <IconButton size={size || 'small'} color={color || 'default'}>
-                <Icon sx={{ fontSize: '18px' }} />
-            </IconButton>
+            <Tooltip title={desc} arrow>
+                <IconButton size={size || 'small'} color={color || 'default'}>
+                    <Icon sx={{ fontSize: '18px' }} />
+                </IconButton>
+            </Tooltip>
         </Link>
     )
 }
@@ -54,18 +56,18 @@ const DesktopHeader = () => {
                                     <CostumIconButton Icon={Instagram} />
                                 </Box>
                                 <Box className={styles.actionContainer} >
-                                    <CostumIconButton Icon={SearchOutlined} color='dark' />
+                                    <CostumIconButton Icon={SearchOutlined} color='dark' desc='جستجو' />
                                     <Divider orientation='vertical' color={grey[900]} variant='middle' flexItem />
-                                    <CostumIconButton Icon={ShoppingCartOutlined} color='dark' />
+                                    <CostumIconButton Icon={ShoppingCartOutlined} color='dark' desc='سبد خرید' />
                                     <Divider orientation='vertical' color={grey[900]} variant='middle' flexItem />
-                                    <CostumIconButton Icon={PersonOutlineOutlined} color='dark' />
+                                    <CostumIconButton Icon={PersonOutlineOutlined} color='dark' desc='پروفایل' />
                                 </Box>
                             </Grid>
 
 
                             <Grid sx={{ display: 'flex', justifyContent: 'end', mt: 1.2 }}>
                                 <Box >
-                                    <CostumIconButton href='/' Icon={HomeOutlined} size='medium' color='secondary' />
+                                    <CostumIconButton href='/' Icon={HomeOutlined} size='medium' color='secondary' desc='خانه' />
                                 </Box>
                                 <Box sx={{ display: 'flex', marginLeft: 3, gap: 4, alignItems: 'center' }}>
                                     <CostumNextLink href='/shop'>
@@ -86,9 +88,9 @@ const DesktopHeader = () => {
                                     </CostumNextLink>
                                 </Box>
                                 <Box sx={{ color: 'white', marginLeft: 2 }}>
-                                    <CostumIconButton Icon={AutoStoriesOutlined} href='/blogs' size='medium' color='secondary' />
+                                    <CostumIconButton Icon={AutoStoriesOutlined} href='/blogs' size='medium' color='secondary' desc='وبلاگ' />
 
-                                    <CostumIconButton Icon={HeadsetMicOutlined} href='/contact' size='medium' color='secondary' />
+                                    <CostumIconButton Icon={HeadsetMicOutlined} href='/contact' size='medium' color='secondary' desc='تماس' />
                                 </Box>
                             </Grid>
 
