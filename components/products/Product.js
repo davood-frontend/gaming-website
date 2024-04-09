@@ -4,7 +4,7 @@ import { Box, Avatar, Card, CardActions, CardContent, CardMedia, Button, Typogra
 import Image from 'next/image';
 import styles from '@/styles/games/Main.module.css'
 import Link from 'next/link';
-const Game = ({ data, id }) => {
+const Product = ({ data, group }) => {
 
     //if the number is 0 it returns free and if its more, it returns the number 3 by 3 formatted with ","
     const priceFormatter = (num) => {
@@ -16,7 +16,7 @@ const Game = ({ data, id }) => {
             return formatted + ' هزار تومان'
         }
     }
-    let { price, type, image, name, slug } = data
+    let { price, type, image, title, slug } = data
     price = priceFormatter(price)
 
     return (
@@ -29,7 +29,7 @@ const Game = ({ data, id }) => {
                 </CardMedia>
                 <CardContent sx={{ py: 1 }}>
                     <Typography textAlign='center' variant='h6'>
-                        {name}
+                        {title}
                     </Typography>
                     <Divider sx={{ height: 4, my: 2, borderRadius: 2 }} className={styles.bgHover} />
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -38,7 +38,7 @@ const Game = ({ data, id }) => {
                     </Box>
                 </CardContent>
                 <CardActions sx={{ p: 1.5 }}>
-                    <Link href={`games/${slug}`} style={{ width: '100%' }}>
+                    <Link href={group == 'games' ? `games/${slug}` : `consoles/${slug}`} style={{ width: '100%' }}>
                         <Button variant='contained' fullWidth className={styles.bgHover}>مشاهده محصول</Button>
                     </Link>
                 </CardActions>
@@ -47,4 +47,4 @@ const Game = ({ data, id }) => {
     );
 };
 
-export default Game;
+export default Product;

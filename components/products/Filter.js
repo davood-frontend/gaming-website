@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Accordion, AccordionSummary, AccordionDetails, IconButton, Button, useMediaQuery } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import FilterRow from './FilterRow';
+import { Box, Button, useMediaQuery } from '@mui/material';
+import FilterRow from '@/components/general/filter/FilterRow';
 import { rowData } from '@/constants/filterData';
-import FilterSlider from './FilterSlider';
+import FilterSlider from '@/components/general/filter/FilterSlider';
 import { useTheme } from '@mui/material'
 const { category, companies, styles, platforms, priceSorting } = rowData
-
+import FilterContainer from '../general/filter/FilterContainer';
 const Filter = ({ data, setData }) => {
     const theme = useTheme()
     const smallerThanMd = useMediaQuery(theme.breakpoints.down('md'))
@@ -19,7 +18,7 @@ const Filter = ({ data, setData }) => {
         priceSorting: 'default',
     })
 
-    const [sliderValue, setSliderValue] = useState([0, 500000])
+    const [sliderValue, setSliderValue] = useState([0, 2000000])
 
     //changes the state according to the radios inside of "FilterRow" component
     const checkOption = (data) => {
@@ -45,25 +44,19 @@ const Filter = ({ data, setData }) => {
         }
     }
     return (
-        <Box sx={{ paddingTop: { xs: 5, md: 22 }, width: 1, paddingX: { xs: '10px', md: '10%' }, mb: 8 }}>
-            <Accordion sx={{ '&.MuiPaper-root': { borderRadius: 2.3 }, background: 'rgba(0, 0, 0, 0.5)' }}>
-                <AccordionSummary expandIcon={<IconButton color='secondary'> <ExpandMoreIcon /> </IconButton>} id='test'>
-                    فیلتر ها
-                </AccordionSummary>
-                <AccordionDetails>
-                    <FilterRow data={category} selectedData={selectedData.category} checkOption={checkOption} />
-                    <FilterRow data={styles} selectedData={selectedData.style} checkOption={checkOption} />
-                    <FilterRow data={platforms} selectedData={selectedData.platform} checkOption={checkOption} />
-                    <FilterRow data={companies} selectedData={selectedData.company} checkOption={checkOption} />
-                    <FilterSlider sliderValue={sliderValue} setSliderValue={setSliderValue} />
-                    <FilterRow data={priceSorting} selectedData={selectedData.priceSorting} checkOption={checkOption} />
-                    <Box>
-                        <Button color='secondary' variant='contained' sx={{ color: 'black', px: 3.5, boxShadow: '0 0 10px rgba(254, 231, 21, 0.3)' }} size={smallerThanMd ? 'small' : 'medium'} onClick={filterData}>فیلتر</Button>
-                    </Box>
-                </AccordionDetails>
+        <FilterContainer>
 
-            </Accordion>
-        </Box>
+            <FilterRow data={category} selectedData={selectedData.category} checkOption={checkOption} />
+            <FilterRow data={styles} selectedData={selectedData.style} checkOption={checkOption} />
+            <FilterRow data={platforms} selectedData={selectedData.platform} checkOption={checkOption} />
+            <FilterRow data={companies} selectedData={selectedData.company} checkOption={checkOption} />
+            <FilterSlider sliderValue={sliderValue} setSliderValue={setSliderValue} page='games' />
+            <FilterRow data={priceSorting} selectedData={selectedData.priceSorting} checkOption={checkOption} />
+            <Box>
+                <Button color='secondary' variant='contained' sx={{ color: 'black', px: 3.5, boxShadow: '0 0 10px rgba(254, 231, 21, 0.3)' }} size={smallerThanMd ? 'small' : 'medium'} onClick={filterData}>فیلتر</Button>
+            </Box>
+        </FilterContainer>
+
     );
 };
 

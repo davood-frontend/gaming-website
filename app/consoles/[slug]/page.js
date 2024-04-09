@@ -14,11 +14,11 @@ import useSWR from 'swr';
 import Loading from '@/components/general/Loading';
 import Error from '@/components/general/Error';
 
-const GamePage = ({ params }) => {
+const ConsolePage = ({ params }) => {
     const { slug } = params
     const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, isLoading, error } = useSWR(`/api/games/${slug}`, fetcher)
-
+    const { data, isLoading, error } = useSWR(`/api/consoles/${slug}`, fetcher)
+    const { data: swiperData, isLoading: swiperLoading, error: swiperError } = useSWR(`/api/consoles`, fetcher)
     if (error) {
         return <Error />
     }
@@ -33,19 +33,19 @@ const GamePage = ({ params }) => {
                     <Box sx={{ px: { xs: '3%', sm: '5%', md: '10%' }, my: 5 }}>
                         <Title data={data} />
                         <AddToChart data={data} />
-                        <AboutProduct data={data} />
-                        <ProductFeatures data={data} />
+                        <AboutProduct />
+                        <ProductFeatures />
                         <Comments data={data} />
                     </Box>
                 </>
             )
             }
             <Box sx={{ mb: 10 }}>
-                <SwiperSlider delay={4000} data={suggestionSwiper} />
+                <SwiperSlider delay={4000} data={swiperData} group='consoles' SliderInfo={{ title: 'محصولات پیشنهادی', desc: 'محصولاتی که ما به شما پیشنهاد میکنیم' }} />
             </Box>
 
         </Box >
     );
 };
 
-export default GamePage; 
+export default ConsolePage; 
