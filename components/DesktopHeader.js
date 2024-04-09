@@ -74,7 +74,7 @@ const DesktopHeader = () => {
                                         فروشگاه
                                     </CostumNextLink>
 
-                                    <CostumNextLink href='/consols'>
+                                    <CostumNextLink href='/consoles'>
                                         کنسول ها
                                     </CostumNextLink>
                                     <CostumNextLink href='/games'>

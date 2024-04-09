@@ -9,6 +9,11 @@ const PaginationComponent = ({ data, itemsPerPage, setCurrentItems }) => {
 
     const pageHandler = (event, pageNumber) => {
         setCurrentPage(pageNumber)
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
     }
 
     //finds the current items by calculating the start index and the end index 

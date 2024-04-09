@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Avatar, Box } from '@mui/material';
 const Hero = ({ data }) => {
     const [currentPic, setCurrentPic] = useState(data.subImages[0])
-    console.log(data);
 
     return (
         <Box sx={{ pt: { xs: 5, md: 22 }, pb: 5, px: { xs: '5px', sm: '10px', md: '30px', lg: '10%' }, display: 'flex', justifyContent: 'center' }}>

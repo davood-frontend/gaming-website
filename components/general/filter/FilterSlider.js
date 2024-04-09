@@ -6,7 +6,8 @@ const numberFormatter = (num) => {
     let formatted = num.toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 3 })
     return formatted
 }
-const FilterSlider = ({sliderValue,setSliderValue}) => {
+const FilterSlider = ({ sliderValue, setSliderValue, page }) => {
+    const limits = page == 'games' ? { min: 0, max: 2000000, step: 50000 } : { min: 0, max: 20000000, step: 1000000 }
     const handleChange = (event, newValue) => {
         setSliderValue(newValue)
     }
@@ -14,7 +15,7 @@ const FilterSlider = ({sliderValue,setSliderValue}) => {
     const max = numberFormatter(sliderValue[1])
     return (
         <Box className={styles.topFadeBorder} sx={{ px: 2 }}>
-            <Slider color='secondary' min={0} max={500000} step={20000} valueLabelDisplay='auto' value={sliderValue} onChange={handleChange} />
+            <Slider color='secondary' min={limits.min} max={limits.max} step={limits.step} valueLabelDisplay='auto' value={sliderValue} onChange={handleChange} />
             <Box sx={{ display: 'flex' }}>
                 <Typography sx={{ typography: { xs: 'caption', sm: 'body1' } }}>قیمت : از {min == 0 ? `رایگان` : `${min} تومان`} تا {max == 0 ? 'رایگان' : `${max} تومان`}</Typography>
             </Box>
