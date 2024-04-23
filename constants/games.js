@@ -218,7 +218,7 @@ export const games = [
         category: "disk",
         style: "openWorld",
         platforms: ["pc", "ps", "xbox"],
-        company: "atari",
+        company: "atari",   
         slug: 'cyberPunk',
     },
     {

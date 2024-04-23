@@ -1,5 +1,4 @@
-'use client'
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import React from 'react';
 import BackGround from '@/components/products/BackGround';
 import Hero from '@/components/product/Hero';
@@ -9,39 +8,39 @@ import AboutProduct from '@/components/product/AboutProduct';
 import ProductFeatures from '@/components/product/ProductFeatures';
 import Comments from '@/components/product/Comments';
 import SwiperSlider from '@/components/SwiperSlider';
-import { suggestionSwiper } from '@/constants/slidersData';
-import useSWR from 'swr';
-import Loading from '@/components/general/Loading';
-import Error from '@/components/general/Error';
-
-const GamePage = ({ params }) => {
+import { randomDataPicker } from '@/constants/functions';
+const fetchCurrentProduct = async (slug) => {
+    const res = await fetch(`http://localhost:3000/api/games/${slug}`)
+    const data = await res.json()
+    return data
+}
+const fetchAllProducts = async () => {
+    const res = await fetch(`http://localhost:3000/api/games`)
+    const data = await res.json()
+    return data
+}
+const GamePage = async ({ params }) => {
     const { slug } = params
-    const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, isLoading, error } = useSWR(`/api/games/${slug}`, fetcher)
+    const currentProduct = await fetchCurrentProduct(slug)
+    const allProducts = await fetchAllProducts()
 
-    if (error) {
-        return <Error />
-    }
+    const swiperData = randomDataPicker(allProducts)
+
     return (
         <Box >
-            <BackGround data={data} />
-            {isLoading ? (
-                <Loading pt={30} />
-            ) : (
-                <>
-                    <Hero data={data} />
-                    <Box sx={{ px: { xs: '3%', sm: '5%', md: '10%' }, my: 5 }}>
-                        <Title data={data} />
-                        <AddToChart data={data} />
-                        <AboutProduct data={data} />
-                        <ProductFeatures data={data} />
-                        <Comments data={data} />
-                    </Box>
-                </>
-            )
-            }
+            <BackGround data={currentProduct} />
+
+            <Hero data={currentProduct} />
+            <Box sx={{ px: { xs: '3%', sm: '5%', md: '10%' }, my: 5 }}>
+                <Title data={currentProduct} />
+                <AddToChart data={currentProduct} />
+                <AboutProduct data={currentProduct} />
+                <ProductFeatures data={currentProduct} />
+                <Comments data={currentProduct} />
+            </Box>
+
             <Box sx={{ mb: 10 }}>
-                <SwiperSlider delay={4000} data={suggestionSwiper} />
+                <SwiperSlider delay={4000} data={swiperData} SliderInfo={{ title: 'محصولات پیشنهادی', desc: 'محصولاتی که ما به شما پیشنهاد میکنیم' }} />
             </Box>
 
         </Box >

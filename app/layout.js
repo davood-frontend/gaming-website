@@ -4,7 +4,7 @@ import { Vazirmatn } from 'next/font/google'
 import { MainContext } from '@/context/mainContext'
 import DesktopHeader from '@/components/DesktopHeader'
 import MobileHeader from '@/components/MobileHeader'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import Footer from '@/components/Footer'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
                   {children}
                   <Footer />
                 </Box>
+
               </MainContext>
             </MainTheme>
           </StyledEngineProvider>

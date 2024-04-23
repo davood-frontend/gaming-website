@@ -6,11 +6,9 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Unstable_Grid2'
-import cyberPunk from '@/assets/bannerCyberPunk.jpg'
 import styles from '@/styles/homePage/Blogs.module.css'
 import Image from 'next/image';
 import { ArrowBack, ArrowBackIos } from '@mui/icons-material';
-import { BlogsData } from '@/constants/slidersData';
 import Link from 'next/link';
 const getData = async () => {
     const res = await fetch('http://localhost:3000/api/blogs')
@@ -21,7 +19,6 @@ const Blogs = async () => {
     const data = await getData()
     const bigBlog = data[5]
     const smallBlogs = data.slice(0, 4)
-    console.log(bigBlog);
     return (
         <Box sx={{ my: 20, px: { xs: '15px', sm: '30px', md: '10%' } }}>
             <Grid container width={1}>
@@ -39,8 +36,7 @@ const Blogs = async () => {
                 </Grid>
                 <Grid xs={12} md={4} sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' }, justifyContent: 'space-around' }} container spacing={2}>
                     {smallBlogs.map((item, index) => {
-                        // const randomNumber = useMemo(() => Math.floor(Math.random() * (13 - 8 + 1) + 9), [])
-                        //fix the animation
+
                         return (
                             <Grid xs={12} sm={6} md={12} key={index}>
                                 <Link href={`blogs/${item._id}`}>

@@ -1,16 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
-import  Box  from '@mui/material/Box';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2'
 import styles from '@/styles/homePage/ProductCategory.module.css'
-const ProductCategory = ({ href, children }) => {
+const ProductCategory = ({ children }) => {
     return (
         <Grid xs={6} md={3} sx={{ px: { xs: 1, md: 2 }, py: 3 }} >
-            <Link href={href} style={{ color: 'black', textDecoration: 'none' }}>
-                <Box className={styles.itemsContainer}>
-                    {children}
-                </Box>
-            </Link>
+            <Box className={styles.itemsContainer}>
+                {children}
+            </Box>
         </Grid>
     )
 }

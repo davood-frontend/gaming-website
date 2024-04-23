@@ -1,3 +1,4 @@
+'use client'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -8,6 +9,7 @@ const Title = ({ data }) => {
     const path = usePathname()
     const isGamePage = path.includes('games')
     const platformsData = () => {
+        //translating the platforms into persian
         const platforms = data.platforms && data.platforms.join(', ')
         let translated = platforms.replace(/xbox/g, 'ایکس باکس')
         translated = translated.replace(/pc/g, 'کامپیوتر')

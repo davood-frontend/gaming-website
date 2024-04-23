@@ -1,50 +1,15 @@
-'use client'
-import { Box } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import Filter from '@/components/products/Filter';
+import React from 'react';
+import Box from '@mui/material/Box';
+import GamesPage from '@/components/games/GamesPage';
 import BackGround from '@/components/products/BackGround';
-import PaginationComponent from '@/components/products/PaginationComponent';
-import useSWR from 'swr';
-import Loading from '@/components/general/Loading';
-import Error from '@/components/general/Error';
-import Products from '@/components/products/Products';
-const GamesPage = () => {
 
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`/api/games`, fetcher)
-    const [filteredData, setFilteredData] = useState()
-    const [currentItems, setCurrentItems] = useState()
-  
-    useEffect(() => {
-        if (!isLoading) {
-            setCurrentItems(data)
-            setFilteredData(data)
-        }
-    }, [isLoading])
-
-    if (error) {
-        return <Error />
-    }
-
+const page = () => {
     return (
-        <Box>
-            <Box sx={{ position: 'relative' }}>
-                <BackGround />
-                <Filter data={data} setData={setFilteredData} />
-                {
-                    !currentItems ? (
-                        <Loading pt={10} />
-                    ) : (
-                        <>
-                            <Products data={currentItems} group='games' />
-                            <PaginationComponent data={filteredData} itemsPerPage={8} setCurrentItems={setCurrentItems} />
-                        </>
-                    )
-                }
-            </Box>
-        </Box >
+        <Box sx={{ paddingTop: { xs: 5, md: 22 } ,position:'relative'}}>
+            <BackGround />
+            <GamesPage scrollLocation={0} />
+        </Box>
     );
 };
 
-export default GamesPage;
+export default page;

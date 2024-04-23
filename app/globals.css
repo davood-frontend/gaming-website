@@ -4,17 +4,19 @@
   box-sizing: border-box;
 }
 
-.devil {
+.devilMayCry {
   animation: devilAnimation 0.7s ease forwards;
   object-fit: cover;
   z-index: 0;
   border-radius: 0.5rem;
 
 }
-a{
+
+a {
   text-decoration: none;
 }
-.assassin {
+
+.assassinsCreedSyndicate {
   animation: assassinAnimation 0.7s ease forwards;
   object-fit: cover;
   z-index: 0;
@@ -85,4 +87,3 @@ a{
   border: 2px solid #af7ce2;
   padding: 3px !important;
 }
-

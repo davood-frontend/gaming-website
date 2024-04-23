@@ -1,20 +1,25 @@
 'use client'
-import React, { useEffect } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import HeroSection from './HeroSection';
-import { Box, Avatar } from '@mui/material'
-import { Context } from '@/context/mainContext';
-import { useContext } from 'react';
-const AppBackground = ({ children }) => {
-    const { homePageHero, homePageHandler } = useContext(Context)
+import { Box } from '@mui/material'
+
+import BackGround from './Background';
+const AppBackground = ({ children, data }) => {
+    const { items } = data
+    const [item1, item2] = items
+    const [homePageHero, setHomePageHero] = useState(item1)
+    const homePageHandler = (item) => {
+        setHomePageHero(item)
+    }
+
     useEffect(() => {
         let timeout = '';
         clearTimeout(timeout)
         timeout = setTimeout(() => {
-            if (homePageHero.id == 0) {
-                homePageHandler('devilMayCry')
+            if (homePageHero.slug == item1.slug) {
+                homePageHandler(item2)
             } else {
-                homePageHandler('watchDogs')
+                homePageHandler(item1)
             }
         }, 5000);
 
@@ -23,17 +28,13 @@ const AppBackground = ({ children }) => {
         }
     }, [homePageHero])
     return (
-        <Box sx={{ position: 'relative', height: { xs: '400px', sm: '450px', md: '700px', lg: '800px' }, zIndex: 0 }} className='container'>
-            <Avatar variant='square' sx={{ height: 1, width: 1, position: 'absolute' }}>
-                <Image src={homePageHero.background} fill style={{ filter: 'grayscale(1) blur(3px)', objectFit: 'cover' }} className={homePageHero.class} alt='عکس پس زمینه' />
-            </Avatar>
-            <Box sx={{ position: 'absolute', width: 1, height: 1, top: 0, right: 0, background: 'linear-gradient(to top, #101820, rgba(16, 24, 32, 0))' }} />
-            <HeroSection homePageHero={homePageHero} homePageHandler={homePageHandler}>
+        <Box sx={{ position: 'relative' }} className='container'>
+            <BackGround img={homePageHero.bigImage} />
+            <HeroSection homePageHero={homePageHero} homePageHandler={homePageHandler} items={items}>
                 {children}
             </HeroSection>
         </Box>
 
     );
 };
-
 export default AppBackground; 

@@ -3,11 +3,11 @@ import { Box } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import HomePageHero from '@/components/HomePageHero';
 
-const HeroSection = ({ homePageHero ,homePageHandler}) => {
+const HeroSection = ({ homePageHero, homePageHandler, items }) => {
     return (
-        <Box sx={{ px: { xs: '10px', sm: '20px', md: '30px', lg: '10%' }, position: 'absolute', width: 1, height: 1, top: { xs: 50, md: 180, lg: 160 }, right: 0, display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ px: { xs: '10px', sm: '20px', md: '30px', lg: '10%' }, pt: { xs: 3, md: 22 }, pb: 5, display: 'flex', justifyContent: 'center' }}>
             <Grid spacing={{ xs: 0, sm: 2, md: 3 }} container sx={{ width: 1, alignItems: 'start', justifyContent: 'start' }}>
-                <HomePageHero homePageHero={homePageHero} homePageHandler={homePageHandler}/>
+                <HomePageHero homePageHero={homePageHero} homePageHandler={homePageHandler} items={items} />
             </Grid>
         </Box>
 

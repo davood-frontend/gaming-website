@@ -1,23 +1,23 @@
 'use client'
 import { Vazirmatn } from 'next/font/google'
-import localFont from 'next/font/local'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+// import localFont from 'next/font/local'
 // const vazir = localFont({
 //     src: '../app/Vazir.woff2',
 //     display: 'swap'
 // })
-const vazir = Vazirmatn({
-    subsets: ['arabic', 'latin'],
-    display: 'swap',
-})
 import rtlPlugin from 'stylis-plugin-rtl'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import { prefixer } from 'stylis'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
 const cacheRTL = createCache({
     key: 'muirtl',
     prepend: true,
     stylisPlugins: [prefixer, rtlPlugin]
+})
+const vazir = Vazirmatn({
+    subsets: ['arabic', 'latin'],
+    display: 'swap',
 })
 const theme = createTheme({
     direction: 'rtl',
