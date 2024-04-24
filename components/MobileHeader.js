@@ -1,28 +1,29 @@
 'use client'
-import React from 'react';
+import React, { useContext } from 'react';
 import { AppBar, Toolbar, Box, Divider, IconButton, TextField, InputAdornment } from '@mui/material'
 import { PersonOutlineOutlined, SearchOutlined, ShoppingCartOutlined, Menu } from '@mui/icons-material';
 import styles from '@/styles/homePage/Header.module.css'
 import Image from 'next/image';
 import Logo from '@/assets/headerLogo.png'
 import Grid from '@mui/material/Unstable_Grid2'
-const CostumIconButton = ({ Icon, color, size }) => {
+import { Context } from '@/context/mainContext';
+const CostumIconButton = ({ Icon, color, size, ...props }) => {
     return (
-        <IconButton size={size || 'small'} color={color || 'default'}>
+        <IconButton size={size || 'small'} color={color || 'default'} {...props}>
             <Icon sx={{ fontSize: '18px' }} />
         </IconButton>
     )
 }
 
-
 const MobileHeader = () => {
+    const { toggleSideBar } = useContext(Context)
     return (
 
         <AppBar className={styles.mobileHeader}>
             <Toolbar>
                 <Box sx={{ width: 1 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', width: 1, alignItems: 'center', py: 1.5 }}>
-                        <CostumIconButton Icon={Menu} size='medium' />
+                        <CostumIconButton Icon={Menu} size='medium' onClick={toggleSideBar} />
 
                         <Image src={Logo} style={{ width: '65px', height: '40px' }} alt='لوگو وبسایت' />
                         <CostumIconButton Icon={PersonOutlineOutlined} size='medium' />
