@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0d1319;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #af7ce2;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #825ca8;
+}
+
 .devilMayCry {
   animation: devilAnimation 0.7s ease forwards;
   object-fit: cover;
@@ -12,9 +33,7 @@
 
 }
 
-a {
-  text-decoration: none;
-}
+
 
 .assassinsCreedSyndicate {
   animation: assassinAnimation 0.7s ease forwards;

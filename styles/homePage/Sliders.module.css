@@ -125,11 +125,27 @@
     .titleHolder {
         padding: 0 30px;
     }
+
+    .swiperSlide {
+        width: 260px !important;
+    }
+
+    .swiperSlideBox {
+        height: 250px;
+    }
 }
 
 @media(max-width : 600px) {
     .titleHolder {
         margin-right: 1rem;
         padding: 0 20px;
+    }
+
+    .swiperSlide {
+        width: 220px !important;
+    }
+
+    .swiperSlideBox {
+        height: 210px;
     }
 }

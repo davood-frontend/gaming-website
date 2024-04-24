@@ -32,13 +32,13 @@ const Form = () => {
         setSnackBar({ open: true, message: 'پیام شما با موفقیت ارسال شد', severity: 'success' })
     }
     return (
-        <Box sx={{ my: 16, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box sx={{ my: { xs: 10, md: 16 }, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box textAlign='center'>
                 <Typography variant='h5' fontWeight={600} color='warning.main' mb={1}>ارسال پیام</Typography>
                 <Typography color='white' variant='subtitle2' fontWeight={200}>ارسال پیشنهادات و انتقادات</Typography>
             </Box>
 
-            <Box width={{ xs: 4/4, sm: 2 / 3 }}>
+            <Box width={{ xs: 4 / 4, sm: 2 / 3 }}>
                 <SnackBar snackBar={snackBar} setSnackBar={setSnackBar} />
                 <form onSubmit={submitHandler}>
                     <Box mt={2} sx={{ width: 1 }}>

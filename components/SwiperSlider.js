@@ -10,19 +10,26 @@ import Image from 'next/image';
 import styles from '@/styles/homePage/Sliders.module.css'
 import Link from 'next/link';
 import { numberFormatter } from '@/constants/functions';
+
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
+
+
 const SwiperSlider = ({ data, delay, SliderInfo, group, noTitle }) => {
+    const theme = useTheme();
+    const smallerThanSm = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Box sx={{ marginTop: noTitle ? 0 : 13 }}>
+        <Box sx={{ marginTop: noTitle ? 0 : { xs: 8, md: 13 } }}>
             <Box className={styles.titleHolder} sx={{ display: noTitle ? 'none' : 'flex' }}>
                 <Box className={styles.animatedDotContainer}>
                     <Box className={styles.animatedDot} />
                 </Box>
                 <Box >
-                    <Typography variant='h6' sx={{ color: 'white' }}>{SliderInfo.title}</Typography>
-                    <Typography sx={{ color: grey[500] }} variant='subtitle2'>{SliderInfo.desc}</Typography>
+                    <Typography gutterBottom variant='h6' sx={{ color: 'white', fontSize: { xs: 15, md: 18 } }}>{SliderInfo.title}</Typography>
+                    <Typography sx={{ color: grey[500], fontSize: { xs: 11, md: 13 } }} variant='subtitle2'>{SliderInfo.desc}</Typography>
                 </Box>
             </Box>
-            <Swiper slidesPerView='auto' speed={1000} spaceBetween={30} pagination={{ clickable: true }} loop={true} modules={[Autoplay]} autoplay={{ delay }}>
+            <Swiper slidesPerView='auto' speed={1000} spaceBetween={smallerThanSm ? 15 : 30} pagination={{ clickable: true }} loop={true} modules={[Autoplay]} autoplay={{ delay }}>
                 {data && data.map((item, index) => (
                     <SwiperSlide key={index} className={styles.swiperSlide} >
                         <Box className={styles.swiperSlideBox}>
