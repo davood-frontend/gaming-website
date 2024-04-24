@@ -9,6 +9,7 @@ import 'swiper/css/autoplay';
 import Image from 'next/image';
 import styles from '@/styles/homePage/Sliders.module.css'
 import Link from 'next/link';
+import { numberFormatter } from '@/constants/functions';
 const SwiperSlider = ({ data, delay, SliderInfo, group, noTitle }) => {
     return (
         <Box sx={{ marginTop: noTitle ? 0 : 13 }}>
@@ -36,7 +37,7 @@ const SwiperSlider = ({ data, delay, SliderInfo, group, noTitle }) => {
                                         </Box>
                                         <Box className={styles.swiperSlideInfo}>
                                             <Typography color='secondary'>{item.title}</Typography>
-                                            <Typography variant='caption' color='white'>{item.price ? item.price + ' تومان' : 'رایگان'}</Typography>
+                                            <Typography variant='caption' color='white'>{item.price ? numberFormatter(item.price) + ' تومان' : 'رایگان'}</Typography>
                                         </Box>
                                     </Box>
                                 </Box>

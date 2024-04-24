@@ -12,13 +12,24 @@ const Comments = ({ data }) => {
         severity: '',
     })
     const [comments, setComments] = useState([])
-    const [newComment, setNewComment] = useState({
+    const [currentComment, setCurrentComment] = useState({
         title: '',
         rating: 0,
         comment: '',
         writer: '',
         email: '',
     })
+
+    const emptyComment = () => {
+        setCurrentComment({
+            title: '',
+            rating: 0,
+            comment: '',
+            writer: '',
+            email: '',
+        })
+    }
+
     useEffect(() => {
         if (data) {
             if (data.comments != null) {
@@ -27,24 +38,27 @@ const Comments = ({ data }) => {
         }
     }, [data])
     const commentHandler = (data) => {
-        setNewComment({ ...newComment, [data.target.name]: data.target.value })
+        setCurrentComment({ ...currentComment, [data.target.name]: data.target.value })
     }
     const ratingHandler = (data) => {
-        setNewComment({ ...newComment, rating: data })
+        setCurrentComment({ ...currentComment, rating: data })
     }
+
     const submitForm = (e) => {
         e.preventDefault()
-        if (newComment.rating == 0) {
+        if (currentComment.rating == 0) {
             setSnackBar({ open: true, message: 'امتیاز دهی برای ثبت دیدگاه الزامی است', severity: 'error' })
         } else {
             setSnackBar({ open: true, message: 'نظر شما با موفقیت ثبت شد', severity: 'success' })
-            setComments([...comments, newComment])
+            setComments([...comments, currentComment])
+            emptyComment()
         }
     }
+
     return (
         <Box sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: { xs: 1, sm: 3 }, my: 4, color: '#dfdfdf' }}>
             <SnackBar snackBar={snackBar} setSnackBar={setSnackBar} />
-            <SetComment data={data} commentHandler={commentHandler} ratingHandler={ratingHandler} submitForm={submitForm} />
+            <SetComment values={currentComment} data={data} commentHandler={commentHandler} ratingHandler={ratingHandler} submitForm={submitForm} />
             <Divider sx={{ mt: 5, borderBottomWidth: 2 }}></Divider>
             <ReadComments data={comments} />
         </Box>

@@ -75,13 +75,10 @@ const DesktopHeader = () => {
                                     </CostumNextLink>
 
                                     <CostumNextLink href='/consoles'>
-                                        کنسول ها
+                                        کنسول ها 
                                     </CostumNextLink>
                                     <CostumNextLink href='/games'>
                                         بازی
-                                    </CostumNextLink>
-                                    <CostumNextLink href='/equipments'>
-                                        لوازم جانبی
                                     </CostumNextLink>
                                     <CostumNextLink href='/about'>
                                         درباره ما

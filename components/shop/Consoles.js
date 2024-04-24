@@ -14,7 +14,7 @@ const Consoles = () => {
                     مدرن ترین کنسول های بازی
                 </Typography>
             </Box>
-            <ConsolesPage scrollLocation={2600} />
+            <ConsolesPage scrollLocation={2550} />
         </Box>
     );
 };

@@ -5,8 +5,8 @@ import HomePageHero from '@/components/HomePageHero';
 
 const HeroSection = ({ homePageHero, homePageHandler, items }) => {
     return (
-        <Box sx={{ px: { xs: '10px', sm: '20px', md: '30px', lg: '10%' }, pt: { xs: 3, md: 22 }, pb: 5, display: 'flex', justifyContent: 'center' }}>
-            <Grid spacing={{ xs: 0, sm: 2, md: 3 }} container sx={{ width: 1, alignItems: 'start', justifyContent: 'start' }}>
+        <Box sx={{ px: { xs: '10px', md: '30px', lg: '10%' }, pt: { xs: 3, md: 22 }, pb: 5, display: 'flex', justifyContent: 'center' }}>
+            <Grid spacing={{ xs: 0, sm: 1, md: 3 }} container sx={{ width: 1, alignItems: 'start', justifyContent: 'start' }}>
                 <HomePageHero homePageHero={homePageHero} homePageHandler={homePageHandler} items={items} />
             </Grid>
         </Box>
