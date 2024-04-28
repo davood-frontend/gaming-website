@@ -2,7 +2,7 @@ import { Box, Button, useMediaQuery, useTheme } from '@mui/material';
 import React, { useState } from 'react';
 import FilterContainer from '../general/filter/FilterContainer';
 import FilterRow from '../general/filter/FilterRow';
-import { consoleFilterData } from '@/constants/consoleFilterData';
+import { consoleFilterData } from '@/constants/consolesFilterData';
 const { category, priceSorting, generation } = consoleFilterData
 import FilterSlider from '../general/filter/FilterSlider';
 const Filter = ({ data, setData }) => {
@@ -39,7 +39,7 @@ const Filter = ({ data, setData }) => {
         <FilterContainer>
             <FilterRow data={category} selectedData={selectedData.category} checkOption={checkOption} />
             <FilterRow data={generation} selectedData={selectedData.generation} checkOption={checkOption} />
-            <FilterSlider sliderValue={sliderValue} setSliderValue={setSliderValue} page='consoles'/>
+            <FilterSlider sliderValue={sliderValue} setSliderValue={setSliderValue} page='consoles' />
             <FilterRow data={priceSorting} selectedData={selectedData.priceSorting} checkOption={checkOption} />
             <Box>
                 <Button color='secondary' variant='contained' sx={{ color: 'black', px: 3.5, boxShadow: '0 0 10px rgba(254, 231, 21, 0.3)' }} size={smallerThanMd ? 'small' : 'medium'} onClick={filterData}>فیلتر</Button>

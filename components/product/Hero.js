@@ -7,15 +7,17 @@ const Hero = ({ data }) => {
     const [currentPic, setCurrentPic] = useState(data.subImages[0])
 
     return (
-        <Box sx={{ pt: { xs: 5, md: 22 }, pb: 5, px: { xs: '5px', sm: '10px', md: '30px', lg: '10%' }, display: 'flex', justifyContent: 'center' }}>
-            <Grid direction='column' container width={1} columnSpacing={{ xs: 1, md: 2 }} rowSpacing={{ xs: 2, sm: 0 }} sx={{ height: { xs: 'auto', sm: 300, md: 500 } }}>
-                <Grid xs={12} sm={4} container height={{ xs: '400px', md: 1 }}>
-                    <Grid xs={12} sx={{ height: 2 / 3, pb: { xs: 0.5, md: 1 } }}>
+        <>
+            <Box sx={{ pt: { xs: 3, sm: 5, md: 22 }, px: { xs: '5px', sm: '10px', md: '30px', lg: '10%' } }}>
+                <Box sx={{ height: { xs: 500, sm: 300, md: 500 }, gridTemplateColumns: "repeat(13,auto)", gridTemplateRows: 'repeat(13,auto)', display: 'grid' }} gap={{ xs: 1, md: 2 }}>
+
+                    <Box sx={{ display: { xs: 'none', sm: 'block' }, gridColumn: { xs: '1/ span 13', sm: '1/  span 4' }, gridRow: { xs: '1/ span 4', sm: '1/ span 8' } }}>
                         <Avatar variant='rounded' sx={{ height: 1, width: 1, borderRadius: 4, boxShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}>
                             <Image layout='fill' objectFit='cover' src={data.image} />
                         </Avatar>
-                    </Grid>
-                    <Grid xs={12} sx={{ height: 1 / 3, pt: { xs: 0.5, md: 1 } }} container spacing={1}>
+                    </Box>
+
+                    <Grid container sx={{ gridColumn: { xs: '1/ span 13', sm: '1/  span 4' }, gridRow: { xs: '10/ span 3', sm: '9/ span 4' } }} spacing={1}>
                         {data.subImages.map((item, index) => (
                             <Grid xs={4} key={index}>
                                 <Avatar variant='rounded' sx={{ height: 1, width: 1, cursor: 'pointer', borderRadius: 2, boxShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }} key={index}>
@@ -24,14 +26,17 @@ const Hero = ({ data }) => {
                             </Grid>
                         ))}
                     </Grid>
-                </Grid>
-                <Grid xs={12} sm={8} height={{ xs: '300px', md: 1 }}>
-                    <Avatar variant='rounded' sx={{ height: 1, width: 1, borderRadius: 4, boxShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}>
-                        <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={currentPic} src={currentPic} alt={data.title} />
-                    </Avatar>
-                </Grid>
-            </Grid>
-        </Box>
+
+                    <Box sx={{ gridColumn: { xs: '1/ span 13', sm: '5/  span 9' }, gridRow: { xs: '1/ span 9', sm: '1/ span 12' } }}>
+                        <Avatar variant='rounded' sx={{ height: 1, width: 1, borderRadius: 4, boxShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}>
+                            <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={currentPic} src={currentPic} alt={data.title} />
+                        </Avatar>
+                    </Box>
+
+                </Box>
+            </Box>
+
+        </>
     );
 };
 

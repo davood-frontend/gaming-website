@@ -22,23 +22,24 @@ const Product = ({ data, group }) => {
     return (
         <Grid xs={12} smBefore={6} smAfter={4} lg={3}>
             <Card sx={{ borderRadius: 3 }} className={styles.gameCard}>
-                <CardMedia sx={{ p: 2 }}>
+                <CardMedia sx={{ p: { xs: 1, sm: 2 } }}>
                     <Avatar variant='square' sx={{ height: { xs: 200, sm: 250 }, width: 1, borderRadius: 3 }}>
                         <Image src={image} fill style={{ objectFit: 'cover' }} />
                     </Avatar>
                 </CardMedia>
                 <CardContent sx={{ py: 1 }}>
-                    <Typography textAlign='center' variant='h6'>
+                    <Typography textAlign='center' variant='h6' fontSize={{ xs: 14, sm: 18 }}>
                         {title}
                     </Typography>
                     <Divider sx={{ height: 4, my: 2, borderRadius: 2 }} className={styles.bgHover} />
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant='subtitle2'>{type}</Typography>
-                        <Typography variant='subtitle2'>{price}</Typography>
+                        <Typography variant='subtitle2' fontSize={{ xs: 11, sm: 13 }}>{type}</Typography>
+                        <Typography variant='subtitle2' fontSize={{ xs: 11, sm: 13 }}>{price}</Typography>
                     </Box>
                 </CardContent>
                 <CardActions sx={{ p: 1.5 }}>
-                    <Link href={group == 'games' ? `games/${slug}` : `consoles/${slug}`} style={{ width: '100%' }}>
+                    {/* if the argument is "games" the link navigates to the games page otherwise it navigates to the consoles page, in both case the title is sent for metaData */}
+                    <Link href={group === 'games' ? { pathname: `games/${slug}`, query: { name: title } } : { pathname: `consoles/${slug}`, query: { name: title } }} style={{ width: '100%' }}>
                         <Button variant='contained' fullWidth className={styles.bgHover}>مشاهده محصول</Button>
                     </Link>
                 </CardActions>

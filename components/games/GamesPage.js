@@ -1,8 +1,7 @@
 'use client'
 import { Box } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import Filter from '@/components/products/Filter';
-import BackGround from '@/components/products/BackGround';
+import Filter from '@/components/games/Filter';
 import PaginationComponent from '@/components/products/PaginationComponent';
 import useSWR from 'swr';
 import Loading from '@/components/general/Loading';
@@ -13,6 +12,7 @@ const GamesPage = ({ scrollLocation }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, error, isLoading } = useSWR(`/api/games`, fetcher)
+
     const [filteredData, setFilteredData] = useState()
     const [currentItems, setCurrentItems] = useState()
 
@@ -25,13 +25,11 @@ const GamesPage = ({ scrollLocation }) => {
     }, [isLoading])
 
     if (error) {
-        console.log(error);
         return <Error />
     }
 
     return (
         <Box>
-            {/* <BackGround /> */}
             <Filter data={data} setData={setFilteredData} />
             {
                 !currentItems ? (

@@ -9,6 +9,6 @@ export const GET = async (request, { params }) => {
         const blog = await Blog.findById(id).exec()
         return new NextResponse(JSON.stringify(blog), { status: 200 })
     } catch (err) {
-        return new NextResponse(err.message, { status: 500 })
+        return new NextResponse('Api Error', { status: 500 })
     }
 }

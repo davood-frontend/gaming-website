@@ -6,6 +6,8 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import SnackBar from '../general/SnackBar';
 const Form = () => {
+
+
     const [currentComment, setCurrentComment] = useState({
         name: '',
         email: '',
@@ -45,19 +47,19 @@ const Form = () => {
                         <Typography sx={{ mb: 1 }} color='white'>
                             نام شما (الزامی)
                         </Typography>
-                        <TextField required name='name' onChange={changeHandler} value={currentComment.name} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                        <TextField required name='name' autoComplete='off' onChange={changeHandler} value={currentComment.name} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
                         <Typography sx={{ mb: 1 }} color='white'>
                             ایمیل شما (الزامی)
                         </Typography>
-                        <TextField required type='email' dir='ltr' name='email' onChange={changeHandler} value={currentComment.email} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                        <TextField required type='email' autoComplete='off' dir='ltr' name='email' onChange={changeHandler} value={currentComment.email} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
                         <Typography sx={{ mb: 1 }} color='white'>
                             موضوع
                         </Typography>
-                        <TextField required size='small' name='subject' onChange={changeHandler} value={currentComment.subject} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                        <TextField required size='small' autoComplete='off' name='subject' onChange={changeHandler} value={currentComment.subject} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
                         <Typography sx={{ mb: 1 }} color='white'>
@@ -65,7 +67,7 @@ const Form = () => {
                         </Typography>
                         <TextField required rows={8} multiline name='message' onChange={changeHandler} value={currentComment.message} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
-                    <Button type='submit' variant='contained' fullWidth color='warning' sx={{ boxShadow: '0 0 10px rgba(254, 231, 21, 0.5)', mt: 5 }}>
+                    <Button type='submit' variant='contained' autoComplete='off' fullWidth color='warning' sx={{ boxShadow: '0 0 10px rgba(254, 231, 21, 0.5)', mt: 5 }}>
                         <Typography variant='body1' fontWeight={900}>
                             ارسال
                         </Typography>

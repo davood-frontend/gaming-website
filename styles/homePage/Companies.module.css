@@ -17,7 +17,7 @@
 }
 
 .itemBg {
-    background-image: url(../../assets/companies.jpg);
+    background-image: url(../../assets/companies/companies.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 180px;

@@ -33,3 +33,9 @@
     box-shadow: 0 0 10px rgba(175, 124, 226, 0.5);
 }
 
+@media(max-width : 600px) {
+    .topFadeBorder {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+}

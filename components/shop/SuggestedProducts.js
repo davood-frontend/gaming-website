@@ -1,12 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { randomDataPicker } from '@/constants/functions';
+import { randomDataPicker } from '@/app/utils/functions';
 const fetchAllGames = async () => {
     const res = await fetch(`http://localhost:3000/api/games`)
     const data = await res.json()
     return data
 }
-import SwiperSlider from '@/components/SwiperSlider';
+import SwiperSlider from '@/components/homePage/SwiperSlider';
 import Typography from '@mui/material/Typography';
 import { grey } from '@mui/material/colors';
 const SuggestedProducts = async () => {

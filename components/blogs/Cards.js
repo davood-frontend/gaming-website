@@ -16,7 +16,7 @@ const Cards = async () => {
     const data = await fetchData()
     return (
         <Box sx={{ pt: { xs: 5, md: 25 }, pb: 15 }}>
-            <Typography variant='h2' color='secondary' sx={{ textAlign: 'center', fontWeight: 800, textShadow: '0 0 10px rgba(175,124,226,0.5)' }}>وبلاگ</Typography>
+            <Typography variant='h2' color='secondary'  sx={{ textAlign: 'center', fontWeight: 800, textShadow: '0 0 10px rgba(175,124,226,0.5)' }}>وبلاگ</Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Grid container width={1} columnSpacing={3}>
                     {data.map((item, index) => (

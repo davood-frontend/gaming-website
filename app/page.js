@@ -1,13 +1,14 @@
 import React from 'react';
 import Box from '@mui/material/Box'
-import AppBackground from '@/components/AppBackground';
-import HomePageHero from '@/components/HomePageHero';
-import ProductCategories from '@/components/ProductCategories';
-import SwiperSlider from '@/components/SwiperSlider';
-import HomePageBanner from '@/components/HomePageBanner';
-import Companies from '@/components/Companies';
-import Blogs from '@/components/Blogs';
-import { latestItemsPicker, randomDataPicker, firstItemsPicker } from '@/constants/functions'
+import AppBackground from '@/components/homePage/AppBackground';
+import HomePageHero from '@/components/homePage/HomePageHero';
+import ProductCategories from '@/components/homePage/ProductCategories';
+import SwiperSlider from '@/components/homePage/SwiperSlider';
+import HomePageBanner from '@/components/homePage/HomePageBanner';
+import Companies from '@/components/homePage/Companies';
+import Blogs from '@/components/homePage/Blogs';
+import { latestItemsPicker, randomDataPicker, firstItemsPicker } from '@/app/utils/functions'
+
 
 const fetchAllGames = async () => {
   const res = await fetch(`http://localhost:3000/api/games`)

@@ -1,6 +1,6 @@
 'use client'
 import { Vazirmatn } from 'next/font/google'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 // import localFont from 'next/font/local'
 // const vazir = localFont({
 //     src: '../app/Vazir.woff2',
@@ -19,7 +19,7 @@ const vazir = Vazirmatn({
     subsets: ['arabic', 'latin'],
     display: 'swap',
 })
-const theme = createTheme({
+let theme = createTheme({
     direction: 'rtl',
     palette: {
         mode: 'dark',
@@ -62,6 +62,7 @@ const theme = createTheme({
 
 })
 
+ theme = responsiveFontSizes(theme)
 export const MainTheme = ({ children }) => {
     return (
         <CacheProvider value={cacheRTL}>

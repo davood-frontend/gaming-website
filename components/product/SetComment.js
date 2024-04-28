@@ -18,7 +18,7 @@ const SetComment = ({ commentHandler, data, ratingHandler, submitForm, values })
                     <Typography sx={{ mb: 1 }}>
                         عنوان دیدگاه
                     </Typography>
-                    <TextField required value={values.title} name='title' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                    <TextField autoComplete='off' required value={values.title} name='title' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                 </Box>
                 <Box sx={{ my: 2 }}>
                     <Typography>امتیاز شما</Typography>
@@ -28,20 +28,20 @@ const SetComment = ({ commentHandler, data, ratingHandler, submitForm, values })
                     <Typography sx={{ mb: 1 }}>
                         دیدگاه شما
                     </Typography>
-                    <TextField required value={values.comment} name='comment' onChange={commentHandler} rows={4} multiline fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                    <TextField autoComplete='off' required value={values.comment} name='comment' onChange={commentHandler} rows={4} multiline fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                 </Box>
                 <Grid container columnSpacing={2} sx={{ my: 3 }}>
                     <Grid xs={12} sm={6}>
                         <Typography sx={{ mb: 1 }}>
                             نام
                         </Typography>
-                        <TextField required value={values.writer} name='writer' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                        <TextField autoComplete='off' required value={values.writer} name='writer' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Grid>
                     <Grid xs={12} sm={6}>
                         <Typography sx={{ mb: 1, mt: { xs: 1, sm: 0 } }}>
                             ایمیل
                         </Typography>
-                        <TextField required value={values.email} name='email' type='email' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
+                        <TextField autoComplete='off' required value={values.email} name='email' type='email' onChange={commentHandler} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Grid>
                 </Grid>
                 <Box>

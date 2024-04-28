@@ -7,6 +7,6 @@ export const GET = async () => {
         const bannerData = await Banner.find()
         return new NextResponse(JSON.stringify(bannerData), { status: 200 })
     } catch (err) {
-        return new NextResponse(err, { status: 500 })
+        return new NextResponse('Api Error', { status: 500 })
     }
 }

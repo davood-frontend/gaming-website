@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import bg from '@/assets/blogs/codBlackOps.png'
 import Image from 'next/image';
 const Intro = ({ data }) => {
     return (

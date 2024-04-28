@@ -23,7 +23,7 @@ export const data = [
         link: 'consoles',
     },
     {
-        text: 'بازی',
+        text: 'بازی ها',
         icon: <VideogameAssetOutlinedIcon />,
         link: 'games',
     },

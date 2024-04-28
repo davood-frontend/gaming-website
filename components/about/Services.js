@@ -20,11 +20,11 @@ const data = [{
 ]
 const Services = () => {
     return (
-        <Box sx={{ paddingTop: { xs: 10, sm: 25 }, textAlign: 'center', mb: 10 }}>
-            <Typography variant='h2' color='secondary' sx={{ fontWeight: 900, textShadow: '0 0 10px rgba(175,124,226,0.5) !important' }}>
+        <Box sx={{ paddingTop: { xs: 8, md: 25 }, textAlign: 'center', mb: 10 }}>
+            <Typography variant='h2' color='secondary' fontSize={{ xs: 40, sm: 55 }} sx={{ fontWeight: 900, textShadow: '0 0 10px rgba(175,124,226,0.5) !important' }}>
                 درباره ما
             </Typography>
-            <Box sx={{ mt: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Box sx={{ mt: { xs: 5, md: 10 }, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Box sx={{ mb: 2.5 }}>
                     <Typography variant='h5' color='secondary' fontWeight={500}>خدمات</Typography>
                     <Typography variant='subtitle1' color='white' fontWeight={200}>برخی از خدماتی که ما به شما ارائه میکنیم</Typography>

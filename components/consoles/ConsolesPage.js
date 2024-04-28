@@ -13,7 +13,7 @@ const ConsolesPage = ({ scrollLocation }) => {
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, error, isLoading } = useSWR(`/api/consoles`, fetcher)
 
-    useEffect(() => {
+    useEffect(() => { 
         if (!isLoading) {
             setCurrentItems(data)
             setFilteredData(data)

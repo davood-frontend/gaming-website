@@ -8,6 +8,6 @@ export const GET = async () => {
         const res = await Console.find()
         return new NextResponse(JSON.stringify(res), { status: 200 })
     } catch (err) {
-        return new NextResponse('api error', { status: 500 })
+        return new NextResponse('Api error', { status: 500 })
     }
 }
