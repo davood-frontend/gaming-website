@@ -8,31 +8,19 @@ import AboutProduct from '@/components/product/AboutProduct';
 import ProductFeatures from '@/components/product/ProductFeatures';
 import Comments from '@/components/product/Comments';
 import SwiperSlider from '@/components/homePage/SwiperSlider';
-
+import { fetchAllConsoles, fetchConsole } from '@/app/services/requests';
 export function generateMetadata({ params, searchParams, }) {
     return {
         title: searchParams.name
     }
 }
 
-
-const fetchAllProducts = async () => {
-    const res = await fetch(`http://localhost:3000/api/consoles`)
-    const data = await res.json()
-    return data
-}
-const fetchCurrentProduct = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/consoles/${slug}`)
-    const data = await res.json()
-    return data
-}
-
 const ConsolePage = async ({ params }) => {
 
 
     const { slug } = params
-    const allProducts = await fetchAllProducts()
-    const currentProduct = await fetchCurrentProduct(slug)
+    const allProducts = await fetchAllConsoles()
+    const currentProduct = await fetchConsole(slug)
     return (
         <Box >
             <BackGround img={currentProduct.image} opacity={'0.4'} />

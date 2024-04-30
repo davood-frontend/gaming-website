@@ -11,9 +11,11 @@ import SingleCard from '../blogs/SingleCard';
 import Link from 'next/link';
 import Loading from '../general/Loading';
 const SuggestedBlogs = ({ id }) => {
+
     const [blogs, setBlogs] = useState()
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, error, isLoading } = useSWR('/api/blogs', fetcher)
+
     useEffect(() => {
         if (!isLoading) {
             //removing the blog that we already are inside of it
@@ -21,7 +23,7 @@ const SuggestedBlogs = ({ id }) => {
             setBlogs(filteredData)
         }
     }, [isLoading])
-    console.log(blogs);
+
     if (isLoading) return <Loading />
     return (
         <Box sx={{ my: 10 }}>

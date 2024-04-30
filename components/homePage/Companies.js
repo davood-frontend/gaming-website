@@ -17,10 +17,10 @@ const Companies = () => {
             <Grid container sx={{ width: 1, px: 1 }}>
                 {companiesData.map((item, index) => (
                     <Grid key={index} xs={6} sm={4} sx={{ px: { xs: 1, md: 2 }, position: 'relative', mt: 3 }} >
-                        <Box className={styles.hoverToTop}>
+                        <Box className={styles.hoverToTop} sx={{ borderRadius: 2 }}>
                             <Box className={styles.itemBg} />
                             <Box className={styles.itemsContainer} >
-                                <Avatar className={styles.avatarContainer}>
+                                <Avatar className={styles.avatarContainer} >
                                     <Image style={{ objectFit: 'contain', width: '80%', height: '80%' }} src={item.image} alt={item.title} />
                                 </Avatar>
                                 <Typography className={styles.title} fontSize={{ xs: 13, sm: 15 }}>

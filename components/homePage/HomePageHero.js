@@ -22,7 +22,7 @@ const HomePageHero = ({ homePageHandler, homePageHero, items }) => {
                 <Box className={styles.smallerHalfDescContainer}>
                     <Box className={styles.smallerHalfDesc}>
                         <Box sx={{ backgroundColor: '#af7ce2', padding: 1, borderRadius: 1.5, marginBottom: 2 }}>
-                            <Typography variant='subtitle2'>
+                            <Typography variant='subtitle2' fontWeight={500}>
                                 {homePageHero.title}
                             </Typography>
                         </Box>

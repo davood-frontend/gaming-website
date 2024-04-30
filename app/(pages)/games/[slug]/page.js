@@ -9,28 +9,17 @@ import ProductFeatures from '@/components/product/ProductFeatures';
 import Comments from '@/components/product/Comments';
 import SwiperSlider from '@/components/homePage/SwiperSlider';
 import { randomDataPicker } from '@/app/utils/functions';
-
+import { fetchAllGames, fetchGame } from '@/app/services/requests'
 export function generateMetadata({ params, searchParams, }) {
     return {
         title: searchParams.name
     }
 }
-
-
-const fetchCurrentProduct = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/games/${slug}`)
-    const data = await res.json()
-    return data
-}
-const fetchAllProducts = async () => {
-    const res = await fetch(`http://localhost:3000/api/games`)
-    const data = await res.json()
-    return data
-}
+    
 const GamePage = async ({ params }) => {
     const { slug } = params
-    const currentProduct = await fetchCurrentProduct(slug)
-    const allProducts = await fetchAllProducts()
+    const currentProduct = await fetchGame(slug)
+    const allProducts = await fetchAllGames()
 
     const swiperData = randomDataPicker(allProducts)
     return (

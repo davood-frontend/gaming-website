@@ -5,6 +5,7 @@ import Avatar from '@mui/material/Avatar';
 import Image from 'next/image';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
+import { fetchHeroData } from '@/app/services/requests';
 const ItemContainer = ({ children, href, desc }) => {
     return (
         <Link href={`/games/${href}`}>
@@ -20,14 +21,10 @@ const ItemContainer = ({ children, href, desc }) => {
     )
 }
 
-const fetchData = async () => {
-    const res = await fetch('http://localhost:3000/api/heroData', { cache: 'no-cache' })
-    const convertedData = await res.json()
-    return convertedData
-}
+
 
 const HeroContainer = async () => {
-    const data = await fetchData()
+    const data = await fetchHeroData()
     const [homeHeroData, shopHeroData] = data
     const { shopHero } = shopHeroData
     const smallImages = shopHero.filter(item => item.type == 'small')

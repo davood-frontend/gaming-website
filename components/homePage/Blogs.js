@@ -10,13 +10,10 @@ import styles from '@/styles/homePage/Blogs.module.css'
 import Image from 'next/image';
 import { ArrowBack, ArrowBackIos } from '@mui/icons-material';
 import Link from 'next/link';
-const getData = async () => {
-    const res = await fetch('http://localhost:3000/api/blogs')
-    const data = await res.json()
-    return data
-}
+import { fetchAllBlogs } from '@/app/services/requests';
+
 const Blogs = async () => {
-    const data = await getData()
+    const data = await fetchAllBlogs()
     const bigBlog = data[5]
     const smallBlogs = data.slice(0, 4)
     return (

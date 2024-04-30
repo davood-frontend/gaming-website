@@ -9,11 +9,6 @@ import Footer from '@/components/homePage/Footer'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import SideBar from '@/components/general/SideBar'
-import localFont from 'next/font/local'
-// const vazir = localFont({
-//   src: './Vazir.woff2',
-//   display: 'swap' 
-// })
 const vazir = Vazirmatn({
   subsets: ['arabic', 'latin'],
   display: 'swap',
@@ -43,7 +38,6 @@ export default function RootLayout({ children }) {
                   {children}
                   <Footer />
                 </Box>
-
               </MainContext>
             </MainTheme>
           </StyledEngineProvider>

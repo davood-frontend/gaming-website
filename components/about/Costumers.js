@@ -10,25 +10,7 @@ import 'swiper/css/pagination';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Avatar } from '@mui/material';
 import Image from 'next/image';
-import pfp from '@/assets/pfp.jpg'
-const data = [
-    {
-        name: 'کیان رحیمی',
-        pfp: pfp,
-        position: 'کارمند'
-    },
-    {
-        name: 'کیان رحیمی',
-        pfp: pfp,
-        position: 'مدیرعامل'
-    },
-    {
-        name: 'کیان رحیمی',
-        pfp: pfp,
-        position: 'مدیر'
-    },
-]
-const Costumers = () => {
+const Costumers = ({ costumersData }) => {
 
     return (
         <Box sx={{ my: 10, px: 1 }}>
@@ -37,7 +19,7 @@ const Costumers = () => {
                 <Typography variant='subtitle2' fontWeight={200}>نظر برخی از مشتریان درباره ما</Typography>
             </Box>
             <Swiper style={{ overflow: 'visible' }} dir='rtl' spaceBetween={30} effect='fade' fadeEffect={{ crossFade: true }} navigation={true} pagination={{ clickable: true }} modules={[EffectFade, Navigation, Pagination]} >
-                {data.map((item, index) => (
+                {costumersData.map((item, index) => (
                     <SwiperSlide key={index} style={{ overflow: 'visible' }}>
                         <Box color='white' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 6 }}>
                             <Avatar sx={{ height: 100, width: 100, mb: { xs: 4, md: 2 }, border: '5px solid #af7ce2', boxShadow: '0 0 10px rgba(254, 231, 21, 0.4)' }}>
@@ -45,7 +27,7 @@ const Costumers = () => {
                             </Avatar>
                             <Typography sx={{ mb: 0.3 }} variant='h6' >{item.name}</Typography>
                             <Typography sx={{ mb: 4 }}>{item.position}</Typography>
-                            <Typography variant='subtitle1' sx={{maxWidth: 400, textAlign: 'center' }}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</Typography>
+                            <Typography variant='subtitle1' sx={{ maxWidth: 400, textAlign: 'center' }}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</Typography>
                         </Box>
                     </SwiperSlide>
                 ))}

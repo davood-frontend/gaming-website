@@ -4,30 +4,7 @@ import { timelineOppositeContentClasses, Timeline, TimelineItem, TimelineSeparat
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery, Box, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
-const data = [
-    {
-        title: 'ایده',
-        desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
-        year: 1390,
-
-    },
-    {
-        title: 'فراهم کردن شرایط',
-        desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
-        year: 1392,
-    },
-    {
-        title: 'افتتاح',
-        desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
-        year: 1393,
-    },
-    {
-        title: 'معروفیت',
-        desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
-        year: 1397,
-    }
-]
-const OurStory = () => {
+const OurStory = ({ OurStoryData }) => {
     const theme = useTheme();
     const smallerThanMd = useMediaQuery(theme.breakpoints.down('md'));
     return (
@@ -42,9 +19,9 @@ const OurStory = () => {
                     flex: 0.2
                 },
             }} position={!smallerThanMd && 'alternate'}>
-                {data.map((item, index) => {
+                {OurStoryData.map((item, index) => {
 
-                    //the timeline items are placed left and right so we create a variable thats is odd and even for every other item to place the items correctly AND it's responsive, at mobile size it makes the timeline to be one sided
+                    //the timeline items are placed left and right so we create a variable that is odd and even for every other item to place the items correctly and it's responsive, at mobile size it makes the timeline to be one sided
                     const right = smallerThanMd ? false : index % 2 == 1
 
                     return (

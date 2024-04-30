@@ -2,23 +2,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import React from 'react';
-import icon from '@/assets/gameController.png'
+import icon from '@/assets/about/gameController.png'
 import Grid from '@mui/material/Unstable_Grid2'
 import Image from 'next/image';
-const data = [{
-    title: "فروش اکانت قانونی",
-    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-},
-{
-    title: "فروش بازی",
-    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-},
-{
-    title: "فروش اکانت اشتراکی",
-    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-},
-]
-const Services = () => {
+
+const Services = ({servicesData}) => {
     return (
         <Box sx={{ paddingTop: { xs: 8, md: 25 }, textAlign: 'center', mb: 10 }}>
             <Typography variant='h2' color='secondary' sx={{ fontWeight: 900, textShadow: '0 0 10px rgba(175,124,226,0.5) !important' }}>
@@ -30,7 +18,7 @@ const Services = () => {
                     <Typography variant='subtitle1' color='white' fontWeight={200}>برخی از خدماتی که ما به شما ارائه میکنیم</Typography>
                 </Box>
                 <Grid container columnSpacing={{ sm: 3, md: 4, lg: 7 }} width={1} position='relative'>
-                    {data.map((item, index) => (
+                    {servicesData.map((item, index) => (
                         <Grid xs={12} smAfter={4} key={index} sx={{ mb: { xs: 2, smAfter: 0 } }}>
                             <Box sx={{ backgroundColor: '#192531', boxShadow: '0 5px 20px rgba(0, 0, 0, 0.5)', color: 'white', px: { xs: 2, lg: 4 }, py: 4, borderRadius: 2.5 }}>
                                 <Avatar variant='square' sx={{ height: { xs: 80, lg: 100 }, width: { xs: 80, lg: 100 }, backgroundColor: 'transparent', mx: 'auto' }}>

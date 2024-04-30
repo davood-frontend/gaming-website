@@ -33,6 +33,21 @@
     box-shadow: 0 0 10px rgba(175, 124, 226, 0.5);
 }
 
+.textBar {
+    position: relative;
+    padding-right: 33px;
+}
+
+.textBar::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    top: 15px;
+    right: 0;
+    background-color: #af7ce2;
+}
+
 @media(max-width : 600px) {
     .topFadeBorder {
         padding-top: 18px;

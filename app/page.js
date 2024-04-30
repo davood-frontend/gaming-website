@@ -8,28 +8,8 @@ import HomePageBanner from '@/components/homePage/HomePageBanner';
 import Companies from '@/components/homePage/Companies';
 import Blogs from '@/components/homePage/Blogs';
 import { latestItemsPicker, randomDataPicker, firstItemsPicker } from '@/app/utils/functions'
+import { fetchAllConsoles, fetchAllGames, fetchBannerData, fetchHeroData } from '@/app/services/requests'
 
-
-const fetchAllGames = async () => {
-  const res = await fetch(`http://localhost:3000/api/games`)
-  const data = await res.json()
-  return data
-}
-const fetchAllConsoles = async () => {
-  const res = await fetch(`http://localhost:3000/api/consoles `)
-  const data = await res.json()
-  return data
-}
-const fetchHeroData = async () => {
-  const res = await fetch('http://localhost:3000/api/heroData', { cache: 'no-cache' })
-  const data = await res.json()
-  return data;
-}
-const fetchBannerData = async () => {
-  const res = await fetch('http://localhost:3000/api/bannerData', { cache: 'no-cache' })
-  const data = await res.json()
-  return data;
-}
 const Home = async () => {
   const AllGames = await fetchAllGames()
   const AllConsoles = await fetchAllConsoles()

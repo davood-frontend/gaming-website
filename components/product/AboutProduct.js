@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-
+import  styles  from '@/styles/games/Main.module.css'
 const AboutProduct = () => {
     return (
         <Box sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: { xs: 3, sm: 3 }, my: 4, color: '#dfdfdf' }}>
-            <Typography variant='h5' color='secondary' sx={{ mb: 2 }} className='beforeTitle' >
+            <Typography variant='h5' color='secondary' sx={{ mb: 2 }} className={styles.textBar} >
                 درباره محصول
             </Typography>
             <Typography sx={{ fontWeight: 200, wordSpacing: 2, textAlign: 'justify' }} fontSize={{ xs: 13, sm: 15 }} >

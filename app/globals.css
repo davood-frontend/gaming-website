@@ -33,8 +33,6 @@ a {
 
 }
 
-
-
 .assassinsCreedSyndicate {
   animation: assassinAnimation 0.7s ease forwards;
   object-fit: cover;
@@ -70,21 +68,6 @@ a {
   to {
     opacity: 1;
   }
-}
-
-.beforeTitle {
-  position: relative;
-  padding-right: 33px;
-}
-
-.beforeTitle::before {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 2px;
-  top: 15px;
-  right: 0;
-  background-color: #af7ce2;
 }
 
 .swiper-pagination {
