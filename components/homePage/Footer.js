@@ -9,15 +9,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { grey } from '@mui/material/colors';
 import styles from '@/styles/homePage/Footer.module.css'
 import BackGround from '../footer/BackGround';
-const CostumLink = ({ children }) => {
-    return (
-        <Typography variant='body1' sx={{ fontWeight: 200, mb: 1.5 }}>
-            <Link href='' style={{ textDecoration: 'none', color: 'white' }}>
-                {children}
-            </Link>
-        </Typography>
-    )
-}
+
 const TitleCaption = ({ children }) => {
     return (
         <Typography variant='subtitle1' sx={{ fontWeight: 200, mb: { xs: 2, md: 5 }, mt: 1, color: 'white', color: grey[500] }}>
@@ -25,11 +17,20 @@ const TitleCaption = ({ children }) => {
         </Typography>
     )
 }
+const CostumLink = ({ children }) => {
+    return (
+        <Typography  sx={{ mb: 1.5 }} variant='subtitle1'>
+            <Link href='' style={{ textDecoration: 'none', color: 'white' }}>
+                {children}
+            </Link>
+        </Typography>
+    )
+}
 const ContactItem = ({ Icon, text }) => {
     return (
         <Box sx={{ color: 'white', display: 'flex', mb: 3 }}>
             <Icon color='secondary' />
-            <Typography sx={{ ml: 2, fontWeight: 200 }}>{text}</Typography>
+            <Typography sx={{ ml: 2 }} variant='subtitle1'>{text}</Typography>
         </Box>
     )
 }
@@ -44,7 +45,7 @@ const Footer = () => {
                 <Grid xs={12} md={5} sx={{ mb: { xs: 5, md: 0 } }}>
                     <Typography variant='h6' color='secondary'>دمو قالب گیم پلاس</Typography>
                     <TitleCaption>دنیای بازی</TitleCaption>
-                    <Typography variant='body1' color='white' sx={{ fontWeight: 200, wordSpacing: 4 }} fontSize={{ xs: 13, sm: 15 }}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان اساسا مورد استفاده قرار گیرد.</Typography>
+                    <Typography variant='subtitle1' color='white' sx={{ wordSpacing: 4 }} >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان اساسا مورد استفاده قرار گیرد.</Typography>
                 </Grid>
                 <Grid xs={12} sm={6} md={3.5} sx={{ mb: { xs: 5, sm: 0 } }}>
                     <Typography variant='h6' color='secondary'>لینک های مفید</Typography>

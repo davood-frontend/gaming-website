@@ -18,7 +18,7 @@ const SuggestedProducts = async () => {
                 <Typography color='secondary' variant='h5' fontWeight={600}>
                     محصولات پیشنهادی
                 </Typography>
-                <Typography color={grey[400]}>
+                <Typography color={grey[400]} variant='body2'>
                     محصولاتی که ما به شما پیشنهاد میکنیم
                 </Typography>
             </Box>

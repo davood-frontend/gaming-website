@@ -28,7 +28,7 @@ const Title = ({ data }) => {
                         <Grid xs={12} md={4} lg={3}>
                             <Box sx={{ display: 'flex', marginRight: 3 }}>
                                 <AppsIcon sx={{ marginRight: 0.5 }} color='secondary' />
-                                <Typography sx={{ fontWeight: 200 }} fontSize={{ xs: 13, md: 15 }}>دسته بندی :  {data.type || data.category}</Typography>
+                                <Typography sx={{ fontWeight: 200 }} variant='subtitle1'>دسته بندی :  {data.type || data.category}</Typography>
                             </Box>
                         </Grid>
                         <Grid sx={{ mt: { xs: 1, md: 0 } }} xs={12} md={8} lg={9}>
@@ -36,9 +36,9 @@ const Title = ({ data }) => {
                                 <SportsEsportsIcon sx={{ marginRight: 0.5 }} color='secondary' />
                                 {
                                     isGamePage ? (
-                                        <Typography sx={{ fontWeight: 200 }} fontSize={{ xs: 13, md: 15 }}>پلتفرم : {platformsData()} </Typography>
+                                        <Typography sx={{ fontWeight: 200 }} variant='subtitle1'>پلتفرم : {platformsData()} </Typography>
                                     ) : (
-                                        <Typography sx={{ fontWeight: 200 }} fontSize={{ xs: 13, md: 15 }}>سازنده : {data.company} </Typography>
+                                        <Typography sx={{ fontWeight: 200 }} variant='subtitle1'>سازنده : {data.company} </Typography>
                                     )
                                 }
                             </Box>

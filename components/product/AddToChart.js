@@ -38,15 +38,15 @@ const AddToChart = ({ data }) => {
         <Grid sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: 2, my: 4, color: 'white' }} container>
             <Grid xs={12} md={9} container>
                 {infoData.map((item, index) => (
-                    <Grid sx={{ display: 'flex', py: 2,alignItems:'center' }} xs={6} sm={4} key={index}>
+                    <Grid sx={{ display: 'flex', py: 2, alignItems: 'center' }} xs={6} sm={4} key={index}>
                         <Avatar variant='rounded' sx={{ backgroundColor: 'transparent', height: { xs: 40, sm: 50 }, width: { xs: 40, sm: 50 }, marginRight: 2 }}>
                             <Image fill style={{ objectFit: 'contain' }} src={item.icon} />
                         </Avatar>
                         <Box>
-                            <Typography variant='subtitle' sx={{ fontWeight: 600 }} fontSize={{ xs: 14, sm: 16 }}>
+                            <Typography sx={{ fontWeight: 600 }} fontSize={{ xs: 15, sm: 16 }}>
                                 {item.title}
                             </Typography>
-                            <Typography variant='subtitle2' sx={{ fontWeight: 300, mt: 0.5 }} fontSize={{ xs: 11, sm: 13 }}>
+                            <Typography variant='subtitle2' sx={{ fontWeight: 300, mt: 0.5 }} >
                                 {item.caption}
                             </Typography>
                         </Box>

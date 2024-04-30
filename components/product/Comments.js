@@ -56,7 +56,7 @@ const Comments = ({ data }) => {
     }
 
     return (
-        <Box sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: { xs: 1, sm: 3 }, my: 4, color: '#dfdfdf' }}>
+        <Box sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius: 3, p: { xs: 2, sm: 3 }, my: 4, color: '#dfdfdf' }}>
             <SnackBar snackBar={snackBar} setSnackBar={setSnackBar} />
             <SetComment values={currentComment} data={data} commentHandler={commentHandler} ratingHandler={ratingHandler} submitForm={submitForm} />
             <Divider sx={{ mt: 5, borderBottomWidth: 2 }}></Divider>

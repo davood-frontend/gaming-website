@@ -25,13 +25,13 @@ const SingleCard = ({ item }) => {
                         <Typography variant='caption' color='warning.main'>1 شهریور</Typography>
                         <Typography variant='caption' color='warning.main'>توسط مدیریت</Typography>
                     </Breadcrumbs>
-                    <Typography className={styles.floatingText} sx={{ typography: { xs: 'body1', md: 'h6' } }}>
+                    <Typography className={styles.floatingText} sx={{ typography: { xs: 'body1', md: 'h6' } }} >
                         <span className={styles.insideText}>
                             {item.title}
                         </span>
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
-                        <Typography sx={{ typography: { xs: 'caption', md: 'subtitle2' }, marginRight: 1 }} className={styles.coloredText}>
+                        <Typography sx={{ typography: { xs: 'caption', md: 'subtitle2' }, marginRight: 1 }}  className={styles.coloredText}>
                             بیشتر بخوانید
                         </Typography>
                         <ArrowBackIcon fontSize='small' />

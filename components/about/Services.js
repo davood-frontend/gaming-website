@@ -21,7 +21,7 @@ const data = [{
 const Services = () => {
     return (
         <Box sx={{ paddingTop: { xs: 8, md: 25 }, textAlign: 'center', mb: 10 }}>
-            <Typography variant='h2' color='secondary' fontSize={{ xs: 40, sm: 55 }} sx={{ fontWeight: 900, textShadow: '0 0 10px rgba(175,124,226,0.5) !important' }}>
+            <Typography variant='h2' color='secondary' sx={{ fontWeight: 900, textShadow: '0 0 10px rgba(175,124,226,0.5) !important' }}>
                 درباره ما
             </Typography>
             <Box sx={{ mt: { xs: 5, md: 10 }, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -36,10 +36,10 @@ const Services = () => {
                                 <Avatar variant='square' sx={{ height: { xs: 80, lg: 100 }, width: { xs: 80, lg: 100 }, backgroundColor: 'transparent', mx: 'auto' }}>
                                     <Image src={icon} fill style={{ objectFit: 'contain' }} />
                                 </Avatar>
-                                <Typography variant='h5' color='secondary' sx={{ my: 2.7, fontWeight: 700, typography: { xs: 'h6', lg: 'h5' } }}>
+                                <Typography variant='h5' color='secondary' sx={{ my: 2.7, fontWeight: 700 }}>
                                     {item.title}
                                 </Typography>
-                                <Typography sx={{ fontWeight: 200, typography: { xs: 'body2', lg: 'body1' } }}>
+                                <Typography variant='subtitle1'>
                                     {item.desc}
                                 </Typography>
                             </Box>

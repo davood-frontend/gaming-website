@@ -48,10 +48,10 @@ const ContactWays = () => {
     return (
         <Box sx={{ pt: { xs: 5, md: 25 } }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Typography variant='h2' color='secondary' fontSize={{ xs: 35, sm: 45, md: 55 }} fontWeight={{ xs: 600, sm: 700, md: 900 }} sx={{ textShadow: '0 0 10px rgba(175,124,226,0.5)', mb: 3 }}>
+                <Typography variant='h2' color='secondary' fontWeight={{ xs: 600, sm: 700, md: 900 }} sx={{ textShadow: '0 0 10px rgba(175,124,226,0.5)', mb: 3 }}>
                     راه های ارتباطی
                 </Typography>
-                <Typography variant='h5' fontWeight={200} color='white' fontSize={{ xs: 15, sm: 18, md: 22 }}>
+                <Typography variant='h5' fontWeight={200} color='white' >
                     CONTACT WAYS
                 </Typography>
             </Box>
@@ -63,7 +63,7 @@ const ContactWays = () => {
                             <Avatar variant='square' sx={{ backgroundColor: 'transparent', height: { xs: 50, smAfter: 60, md: 70, lg: 80 }, width: { xs: 50, smAfter: 60, md: 70, lg: 80 }, mb: 2 }}>
                                 <Image fill src={item.img} style={{ objectFit: 'cover' }} />
                             </Avatar>
-                            <Typography sx={{ color: 'white', fontWeight: 200, fontSize: { xs: 12, smAfter: 14, md: 16, lg: 18 } }} variant='h6'>
+                            <Typography sx={{ color: 'white', fontWeight: 200, fontSize: { xs: 12, smAfter: 14, md: 16, lg: 18 } }} >
                                 {item.text}
                             </Typography>
                             <Line pos='bottom' />
@@ -74,12 +74,12 @@ const ContactWays = () => {
             <Box sx={{ background: '#101820', boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)', display: 'flex', p: 2, alignItems: 'center', mt: 4 }}>
                 <Box color='warning.main' sx={{ display: 'flex' }}>
                     <LocationOnIcon sx={{ fontSize: { xs: 15, sm: 20 } }} />
-                    <Typography sx={{ mx: 1, whiteSpace: 'nowrap' }} fontSize={{ xs: 12, sm: 15 }}>
+                    <Typography sx={{ mx: 1, whiteSpace: 'nowrap' }} variant='subtitle1'>
                         آدرس :
                     </Typography>
                 </Box>
                 <Box color='white'>
-                    <Typography fontSize={{ xs: 12, sm: 15 }} fontWeight={300}>
+                    <Typography variant='subtitle1' fontWeight={300}>
                         ایران، تهران، خیابان شماره 71، کوچه شماره 4، پلاک 7
                     </Typography>
                 </Box>

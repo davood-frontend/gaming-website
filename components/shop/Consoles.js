@@ -10,7 +10,7 @@ const Consoles = () => {
                 <Typography color='secondary' variant='h5' fontWeight={600}>
                     کنسول ها
                 </Typography>
-                <Typography color={grey[400]}>
+                <Typography color={grey[400]} variant='body2'>
                     مدرن ترین کنسول های بازی
                 </Typography>
             </Box>

@@ -44,25 +44,25 @@ const Form = () => {
                 <SnackBar snackBar={snackBar} setSnackBar={setSnackBar} />
                 <form onSubmit={submitHandler}>
                     <Box mt={2} sx={{ width: 1 }}>
-                        <Typography sx={{ mb: 1 }} color='white'>
+                        <Typography sx={{ mb: 1 }} color='white' variant='subtitle1'>
                             نام شما (الزامی)
                         </Typography>
                         <TextField required name='name' autoComplete='off' onChange={changeHandler} value={currentComment.name} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
-                        <Typography sx={{ mb: 1 }} color='white'>
+                        <Typography sx={{ mb: 1 }} color='white' variant='subtitle1'>
                             ایمیل شما (الزامی)
                         </Typography>
                         <TextField required type='email' autoComplete='off' dir='ltr' name='email' onChange={changeHandler} value={currentComment.email} size='small' fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
-                        <Typography sx={{ mb: 1 }} color='white'>
+                        <Typography sx={{ mb: 1 }} color='white' variant='subtitle1'>
                             موضوع
                         </Typography>
                         <TextField required size='small' autoComplete='off' name='subject' onChange={changeHandler} value={currentComment.subject} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />
                     </Box>
                     <Box mt={2} sx={{ width: 1 }}>
-                        <Typography sx={{ mb: 1 }} color='white'>
+                        <Typography sx={{ mb: 1 }} color='white' variant='subtitle1'>
                             پیام شما
                         </Typography>
                         <TextField required rows={8} multiline name='message' onChange={changeHandler} value={currentComment.message} fullWidth variant='standard' InputProps={{ disableUnderline: true }} sx={{ backgroundColor: '#192531', borderRadius: 1, px: 1, py: 1 }} />

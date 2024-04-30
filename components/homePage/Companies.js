@@ -11,8 +11,8 @@ const Companies = () => {
     return (
         <Box className={styles.mainContainer}>
             <Box className={styles.infoContainer}>
-                <Typography variant='h6' fontSize={{ xs: 15, md: 18 }}>کمپانی ها</Typography>
-                <Typography variant='subtitle2' sx={{ color: grey[600], fontSize: { xs: 11, md: 13 } }}>آرشیو محصولات کمپانی های معروف</Typography>
+                <Typography variant='h6' >کمپانی ها</Typography>
+                <Typography variant='subtitle2' sx={{ color: grey[600] }}>آرشیو محصولات کمپانی های معروف</Typography>
             </Box>
             <Grid container sx={{ width: 1, px: 1 }}>
                 {companiesData.map((item, index) => (

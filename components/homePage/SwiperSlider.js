@@ -27,8 +27,8 @@ const SwiperSlider = ({ data, delay, SliderInfo, group, noTitle }) => {
                     <Box className={styles.animatedDot} />
                 </Box>
                 <Box >
-                    <Typography gutterBottom variant='h6' sx={{ color: 'white', fontSize: { xs: 15, md: 18 } }}>{SliderInfo.title}</Typography>
-                    <Typography sx={{ color: grey[500], fontSize: { xs: 11, md: 13 } }} variant='subtitle2'>{SliderInfo.desc}</Typography>
+                    <Typography gutterBottom variant='h6' sx={{ color: 'white' }}>{SliderInfo.title}</Typography>
+                    <Typography sx={{ color: grey[500] }} variant='subtitle2'>{SliderInfo.desc}</Typography>
                 </Box>
             </Box>
             <Swiper slidesPerView='auto' speed={1000} spaceBetween={smallerThanSm ? 15 : 30} pagination={{ clickable: true }} loop={true} modules={[Autoplay]} autoplay={{ delay }}>
@@ -40,7 +40,7 @@ const SwiperSlider = ({ data, delay, SliderInfo, group, noTitle }) => {
                                 <Box className={styles.overLay}>
                                     <Box sx={{ width: 1, my: 1, mx: 1.5 }}>
                                         <Box className={styles.swiperSlideType}>
-                                            <Typography variant='subtitle2' sx={{ py: 0.4, px: 0.8, color: 'black' }} fontSize={{ xs: 11, sm: 13 }}>
+                                            <Typography variant='subtitle2' sx={{ py: 0.4, px: 0.6, color: 'black' }}>
                                                 {item.type || item.company}
                                             </Typography>
                                         </Box>

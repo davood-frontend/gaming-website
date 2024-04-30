@@ -34,7 +34,7 @@ const OurStory = () => {
         <Box sx={{ my: { xs: 5, md: 15 } }}>
             <Box sx={{ textAlign: 'center', mb: 7, mt: 3 }}>
                 <Typography variant='h5' color='secondary' fontWeight={600} marginBottom={1}>داستان ما</Typography>
-                <Typography variant='body1' color='white' fontWeight={250}>داستان شکل گیری ما</Typography>
+                <Typography variant='body2' color='white' fontWeight={250}>داستان شکل گیری ما</Typography>
             </Box>
             <Timeline sx={{
                 px: { xs: 0, md: 2 },
@@ -50,7 +50,7 @@ const OurStory = () => {
                     return (
                         <TimelineItem >
                             <TimelineOppositeContent color="text.secondary" sx={{ display: 'flex', alignItems: 'center', justifyContent: right ? 'start' : 'end', px: { xs: 0, md: 2 } }}>
-                                <Typography variant={smallerThanMd ? 'h6' : 'h5'} color='secondary' sx={{ fontWeight: 500 }}>{item.year}</Typography>
+                                <Typography variant='h5' color='secondary' sx={{ fontWeight: 500 }}>{item.year}</Typography>
                             </TimelineOppositeContent>
                             <TimelineSeparator sx={{ px: { xs: 1.5, sm: 2, md: 6, lg: 10 } }}>
                                 <TimelineConnector sx={{ width: '1px', backgroundColor: '#192531' }} />
@@ -59,8 +59,8 @@ const OurStory = () => {
                             </TimelineSeparator>
                             <TimelineContent sx={{ py: 3 }}>
                                 <Box sx={{ backgroundColor: '#192531', p: 3, color: 'white', borderLeft: '2px solid #af7ce2', borderRadius: 2, textAlign: 'left', marginLeft: right && 'auto', marginRight: !right && 'auto', maxWidth: { xs: '500px', md: '340px' }, boxShadow: '0 5px 20px rgba(0, 0, 0, 0.3)' }}>
-                                    <Typography sx={{ mb: 1, typography: { xs: 'body1', md: 'h6' } }}>{item.title}</Typography>
-                                    <Typography sx={{ typography: { xs: "subtitle2", md: 'subtitle1', fontWeight: 300 }, color: grey[400] }}>
+                                    <Typography variant='body2' fontWeight={500} sx={{ mb: 1 }}>{item.title}</Typography>
+                                    <Typography variant='subtitle2' sx={{ color: grey[400] }}>
                                         {item.desc}
                                     </Typography>
                                 </Box>

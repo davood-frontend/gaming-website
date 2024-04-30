@@ -28,7 +28,7 @@ const Product = ({ data, group }) => {
                     </Avatar>
                 </CardMedia>
                 <CardContent sx={{ py: 1 }}>
-                    <Typography textAlign='center' variant='h6' fontSize={{ xs: 14, sm: 18 }}>
+                    <Typography textAlign='center' variant='h6' >
                         {title}
                     </Typography>
                     <Divider sx={{ height: 4, my: 2, borderRadius: 2 }} className={styles.bgHover} />

@@ -33,8 +33,8 @@ const Costumers = () => {
     return (
         <Box sx={{ my: 10, px: 1 }}>
             <Box color='white' textAlign='center'>
-                <Typography color='secondary' variant='h6' fontWeight={700}>مشتریان ما چه میگویند؟</Typography>
-                <Typography variant='body2' fontWeight={200}>نظر برخی از مشتریان درباره ما</Typography>
+                <Typography color='secondary' variant='h6' fontWeight={700} mb={1}>مشتریان ما چه میگویند؟</Typography>
+                <Typography variant='subtitle2' fontWeight={200}>نظر برخی از مشتریان درباره ما</Typography>
             </Box>
             <Swiper style={{ overflow: 'visible' }} dir='rtl' spaceBetween={30} effect='fade' fadeEffect={{ crossFade: true }} navigation={true} pagination={{ clickable: true }} modules={[EffectFade, Navigation, Pagination]} >
                 {data.map((item, index) => (
@@ -45,7 +45,7 @@ const Costumers = () => {
                             </Avatar>
                             <Typography sx={{ mb: 0.3 }} variant='h6' >{item.name}</Typography>
                             <Typography sx={{ mb: 4 }}>{item.position}</Typography>
-                            <Typography sx={{ fontWeight: 200, maxWidth: 400, textAlign: 'center' }}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</Typography>
+                            <Typography variant='subtitle1' sx={{maxWidth: 400, textAlign: 'center' }}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</Typography>
                         </Box>
                     </SwiperSlide>
                 ))}

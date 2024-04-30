@@ -61,8 +61,53 @@ let theme = createTheme({
     },
 
 })
+theme.typography.h6 = {
+    fontSize: '18px',
+    '@media (max-width:900px)': {
+        fontSize: '15px',
+    },
+}
+theme.typography.h5 = {
+    fontSize: '22px',
+    '@media (max-width:1200px)': {
+        fontSize: '20px',
+    },
+    '@media (max-width:900px)': {
+        fontSize: '18px',
+    },
 
- theme = responsiveFontSizes(theme)
+}
+theme.typography.h2 = {
+    fontSize: '55px',
+    '@media (max-width:900px)': {
+        fontSize: '45px',
+    },
+    '@media (max-width:600px)': {
+        fontSize: '35px',
+    },
+
+}
+theme.typography.subtitle2 = {
+    fontSize: '13px',
+    fontWeight: '300',
+    '@media (max-width:900px)': {
+        fontSize: '11px',
+    },
+}
+theme.typography.subtitle1 = {
+    fontSize: '15px',
+    fontWeight: '300',
+    '@media (max-width:900px)': {
+        fontSize: '13px',
+    },
+}
+theme.typography.body2 = {
+    fontSize: '16px',
+    fontWeight: '300',
+    '@media (max-width:900px)': {
+        fontSize: '14px',
+    },
+}
 export const MainTheme = ({ children }) => {
     return (
         <CacheProvider value={cacheRTL}>

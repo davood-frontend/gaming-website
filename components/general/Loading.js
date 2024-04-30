@@ -8,7 +8,7 @@ const Loading = ({ pt }) => {
             <Avatar variant='rounded' sx={{ width: 1 / 2, height: 300, backgroundColor: 'transparent' }}>
                 <Image src={loading} fill style={{ objectFit: "contain" }} />
             </Avatar>
-            <Typography color='white' variant='h6'>
+            <Typography color='white' variant='h5'>
                 ... LOADING
             </Typography>
         </Box>

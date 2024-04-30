@@ -9,8 +9,8 @@ const ItemContainer = ({ children, href, desc }) => {
     return (
         <Link href={`/games/${href}`}>
             <Avatar variant='square' sx={{ height: 1, width: 1, borderRadius: 1.5, position: 'relative' }}>
-                <Box sx={{ position: 'relative', width: 1, height: 1, bottom: 0, left: 0, zIndex: 1, transition: '0.4s', textAlign: 'justify', opacity: 0, ":hover": { opacity: 1 }, display: { xs: 'none', md: 'block' } }}>
-                    <Typography sx={{ position: 'absolute', height: 'auto', width: '90%', top: '5%', left: '50%', transform: 'translateX(-50%)', color: 'white', fontWeight: 300, backgroundColor: 'rgba(0,0,0,0.6)', padding: { xs: 1, md: 2 }, borderRadius: 2, fontSize: { xs: 10, md: 13 } }}>
+                <Box sx={{ position: 'relative', width: 1, height: 1, bottom: 0, left: 0, zIndex: 1, transition: '0.4s', opacity: 0, ":hover": { opacity: 1 }, display: { xs: 'none', md: 'block' } }}>
+                    <Typography sx={{ position: 'absolute', height: 'auto', width: '90%', top: '5%', left: '50%', transform: 'translateX(-50%)', color: 'white', fontWeight: 300, backgroundColor: 'rgba(0,0,0,0.6)', padding: { xs: 1, md: 2 }, borderRadius: 2, fontSize: { md: 11, md: 13 } }}>
                         {desc}
                     </Typography>
                 </Box>

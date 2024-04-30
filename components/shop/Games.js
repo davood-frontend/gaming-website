@@ -10,7 +10,7 @@ const Games = () => {
                 <Typography color='secondary' variant='h5' fontWeight={600}>
                     بازی ها
                 </Typography>
-                <Typography color={grey[400]}>
+                <Typography color={grey[400]} variant='body2'>
                     بازی های منتشر شده در فروشگاه
                 </Typography>
             </Box>
