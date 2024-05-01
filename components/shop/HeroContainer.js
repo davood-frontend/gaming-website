@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2'
 import Avatar from '@mui/material/Avatar';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import { fetchHeroData } from '@/app/services/requests';
@@ -35,20 +35,20 @@ const HeroContainer = async () => {
             <Grid container columns={20} height={{ xs: 300, md: 400, lg: 500 }} width={1} spacing={{ xs: 0.8, md: 1.5 }}>
                 <Grid xs={0} sm={6} display={{ xs: 'none', sm: 'block' }}>
                     <ItemContainer href={secondaryItem.slug} desc={secondaryItem.desc}>
-                        <Image fill src={secondaryItem.img} style={{ objectFit: 'cover' }} />
+                        <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={secondaryItem.img} src={secondaryItem.img} alt='عکس بنر' />
                     </ItemContainer>
                 </Grid>
                 <Grid container xs={20} sm={14} direction='column'>
                     <Grid height={3 / 5}>
                         <ItemContainer href={mainItem.slug} desc={mainItem.desc}>
-                            <Image fill src={mainItem.img} style={{ objectFit: 'cover' }} />
+                            <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={mainItem.img} src={mainItem.img} alt='عکس بنر' />
                         </ItemContainer>
                     </Grid>
                     <Grid height={2 / 5} container columns={12} rowSpacing={0}>
                         {smallImages.map((item, index) => (
                             <Grid xs={4} key={index}>
                                 <ItemContainer href={item.slug} desc={item.desc}>
-                                    <Image fill src={item.img} style={{ objectFit: 'cover' }} />
+                                    <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={item.img} src={item.img} alt='عکس بنر' />
                                 </ItemContainer>
                             </Grid>
                         ))}

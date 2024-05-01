@@ -36,7 +36,7 @@ export const fetchConsole = async (slug) => {
 }
 
 export const fetchHeroData = async () => {
-    const res = await fetch(`${baseUrl}heroData`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}heroData`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -45,7 +45,7 @@ export const fetchHeroData = async () => {
 }
 
 export const fetchBannerData = async () => {
-    const res = await fetch(`${baseUrl}bannerData`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}bannerData`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }

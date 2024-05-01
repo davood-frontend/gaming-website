@@ -16,4 +16,4 @@ const page = () => {
     );
 };
 
-export default page;n
+export default page;

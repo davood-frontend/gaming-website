@@ -6,8 +6,8 @@ import bg from '@/assets/notFound.jpg'
 import BackGround from '@/components/general/Background';
 const notFound = () => {
     return (
-        <Box sx={{ height: { xs: '80vh', md: '100vh' }, display: 'flex', alignItems: 'center', justifyContent: 'center' ,px:2}}>
-            <Alert severity='warning' variant='outlined' sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ height: '100vh', display: 'flex', alignItems: { xs: 'start', sm: 'center' }, justifyContent: 'center', px: 2 }}>
+            <Alert severity='warning' variant='outlined' sx={{ display: 'flex', alignItems: 'center', mt: { xs: 15, sm: 0 } }}>
                 <Typography fontSize={{ xs: 13, sm: 18, md: 22 }} fontWeight={400} >
                     صفحه مورد نظر پیدا نشد. لطفا از درستی آدرس وارد شده مطمئن شوید
                 </Typography>

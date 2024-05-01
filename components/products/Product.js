@@ -1,7 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2'
 import { Box, Avatar, Card, CardActions, CardContent, CardMedia, Button, Typography, Divider } from '@mui/material';
-import Image from 'next/image';
+// import Image from 'next/image';
+import Image from 'next/legacy/image';
+
 import styles from '@/styles/games/Main.module.css'
 import Link from 'next/link';
 const Product = ({ data, group }) => {
@@ -24,7 +26,7 @@ const Product = ({ data, group }) => {
             <Card sx={{ borderRadius: 3 }} className={styles.gameCard}>
                 <CardMedia sx={{ p: { xs: 1, sm: 2 } }}>
                     <Avatar variant='square' sx={{ height: { xs: 200, sm: 250 }, width: 1, borderRadius: 3 }}>
-                        <Image src={image} fill style={{ objectFit: 'cover' }} />
+                        <Image priority layout='fill' objectFit='cover' placeholder='blur' blurDataURL={image} src={image} alt={title} />
                     </Avatar>
                 </CardMedia>
                 <CardContent sx={{ py: 1 }}>

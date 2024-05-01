@@ -8,7 +8,6 @@ import { PersonOutlineOutlined, SearchOutlined, ShoppingCartOutlined, Instagram,
 import { grey } from '@mui/material/colors';
 import Link from 'next/link';
 import styles from '@/styles/homePage/Header.module.css'
-
 const CostumNextLink = ({ href, children }) => {
     return (
         <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 300, fontSize: '14px' }}>
