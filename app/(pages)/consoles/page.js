@@ -7,6 +7,7 @@ export const metadata = {
     title: 'کنسول ها'
 }
 const page = () => {
+
     return (
         <Box sx={{ paddingTop: { xs: 5, md: 22 }, position: 'relative' }}>
             <BackGround img={bg} />

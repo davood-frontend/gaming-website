@@ -9,6 +9,7 @@ import ProductFeatures from '@/components/product/ProductFeatures';
 import Comments from '@/components/product/Comments';
 import SwiperSlider from '@/components/homePage/SwiperSlider';
 import { fetchAllConsoles, fetchConsole } from '@/app/services/requests';
+import { envURl } from '@/app/services/requests';
 export function generateMetadata({ params, searchParams, }) {
     return {
         title: searchParams.name
@@ -16,7 +17,9 @@ export function generateMetadata({ params, searchParams, }) {
 }
 
 const ConsolePage = async ({ params }) => {
-
+    if (!envURl) {
+        return null
+    }
 
     const { slug } = params
     const allProducts = await fetchAllConsoles()
