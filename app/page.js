@@ -10,7 +10,11 @@ import Blogs from '@/components/homePage/Blogs';
 import { latestItemsPicker, randomDataPicker, firstItemsPicker } from '@/app/utils/functions'
 import { fetchAllConsoles, fetchAllGames, fetchBannerData, fetchHeroData } from '@/app/services/requests'
 import Footer from '@/components/homePage/Footer';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 const Home = async () => {
+  if (!baseUrl) {
+    return null
+  }
   const AllGames = await fetchAllGames()
   const AllConsoles = await fetchAllConsoles()
   const suggestionSwiper = randomDataPicker(AllGames)
