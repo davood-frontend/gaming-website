@@ -10,7 +10,6 @@ import Comments from '@/components/product/Comments';
 import SwiperSlider from '@/components/homePage/SwiperSlider';
 import { randomDataPicker } from '@/app/utils/functions';
 import { fetchAllGames, fetchGame } from '@/app/services/requests'
-import { envURl } from '@/app/services/requests';
 export function generateMetadata({ params, searchParams, }) {
     return {
         title: searchParams.name
@@ -18,9 +17,6 @@ export function generateMetadata({ params, searchParams, }) {
 }
 
 const GamePage = async ({ params }) => {
-    if (!envURl) {
-        return null
-    }
     const { slug } = params
     const currentProduct = await fetchGame(slug)
     const allProducts = await fetchAllGames()

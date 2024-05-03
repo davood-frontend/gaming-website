@@ -9,6 +9,7 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import SideBar from '@/components/general/SideBar'
 import BackToTop from '@/components/general/BackToTop'
+import { envURl } from './services/requests'
 const vazir = Vazirmatn({
   subsets: ['arabic', 'latin'],
   display: 'swap',
@@ -23,6 +24,9 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
+  if (!envURl) {
+    return null
+  }
   return (
     <html lang="fa-IR" dir='rtl' className={vazir.className}>
       <body>

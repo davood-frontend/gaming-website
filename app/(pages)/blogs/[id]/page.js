@@ -5,14 +5,10 @@ import Intro from '@/components/blog/Intro';
 import Comments from '@/components/blog/Comments';
 import SuggestedBlogs from '@/components/blog/SuggestedBlogs';
 import { fetchBlog } from '@/app/services/requests';
-import { envURl } from '@/app/services/requests';
 export const metadata = {
     title: 'وبلاگ ها'
 }
 const Blog = async ({ params }) => {
-    if (!envURl) {
-        return null
-    }
     const { id } = params
     const data = await fetchBlog(id)
     return (

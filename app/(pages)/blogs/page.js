@@ -3,14 +3,10 @@ import bg from '@/assets/blogsBG.jpg'
 import BackGround from '@/components/general/Background';
 import Box from '@mui/material/Box'
 import Cards from '@/components/blogs/Cards';
-import { envURl } from '@/app/services/requests';
 export const metadata = {
     title: 'وبلاگ ها'
 }
 const page = () => {
-    if (!envURl) {
-        return null
-    }
     return (
         <Box sx={{ px: { xs: '1%', md: '5%', lg: '10%' } }}>
             <BackGround img={bg} />
