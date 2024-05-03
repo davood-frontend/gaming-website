@@ -1,4 +1,4 @@
-const baseUrl = `https://${process.env.NEXT_PUBLIC_BASE_URL}/api/`
+const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/`
 
 
 export const fetchAllGames = async () => {
