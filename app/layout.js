@@ -25,7 +25,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   if (!envURl) {
-    return null
+    return (
+      <html lang="fa-IR" dir='rtl' className={vazir.className}>
+        <body>
+          <p>
+            env not detected
+          </p>
+        </body>
+      </html>
+    )
   }
   return (
     <html lang="fa-IR" dir='rtl' className={vazir.className}>
