@@ -9,9 +9,12 @@ import Companies from '@/components/homePage/Companies';
 import Blogs from '@/components/homePage/Blogs';
 import { latestItemsPicker, randomDataPicker, firstItemsPicker } from '@/app/utils/functions'
 import { fetchAllConsoles, fetchAllGames, fetchBannerData, fetchHeroData } from '@/app/services/requests'
+import { envURl } from '@/app/services/requests';
 import Footer from '@/components/homePage/Footer';
 const Home = async () => {
-
+  if (!envURl) {
+    return null
+  }
   const AllGames = await fetchAllGames()
   const AllConsoles = await fetchAllConsoles()
   const suggestionSwiper = randomDataPicker(AllGames)
