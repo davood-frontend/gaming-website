@@ -1,5 +1,5 @@
-export const envURl = process.env.BASE_URL
-const baseUrl = `${process.env.BASE_URL}/api/`
+export const envURl = process.env.NEXT_PUBLIC_BASE_URL
+const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/`
 
 
 export const fetchAllGames = async () => {
