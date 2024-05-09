@@ -51,4 +51,3 @@ const Title = ({ data }) => {
 };
 
 export default Title;
-// {platforms}

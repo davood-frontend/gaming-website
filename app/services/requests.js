@@ -63,10 +63,11 @@ export const fetchAllBlogs = async () => {
     return data
 }
 export const fetchBlog = async (id) => {
-    const res = await fetch(`${baseUrl}blogs/${id}`)
-    if (!res.ok) {
-        throw new Error('failed to fetch data from API')
+    try {
+        const res = await fetch(`${baseUrl}blogs/${id}`)
+        const data = await res.json()
+        return data
+    } catch (err) {
+        console.log(err);
     }
-    const data = await res.json()
-    return data
 }
