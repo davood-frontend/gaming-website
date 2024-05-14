@@ -25,6 +25,7 @@ const GamesPage = ({ scrollLocation }) => {
     }, [isLoading])
 
     if (error) {
+        console.log(error);
         return <Error />
     }
 
@@ -33,7 +34,9 @@ const GamesPage = ({ scrollLocation }) => {
             <Filter data={data} setData={setFilteredData} />
             {
                 !currentItems ? (
-                    <Loading pt={10} />
+                    <Box mb={20}>
+                        <Loading pt={10} />
+                    </Box>
                 ) : (
                     <>
                         <Products data={currentItems} group='games' />
