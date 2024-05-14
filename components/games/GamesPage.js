@@ -11,7 +11,7 @@ const GamesPage = ({ scrollLocation }) => {
 
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`/api/games`, fetcher)
+    const { data, error, isLoading } = useSWR(`https://gaming-shop-backend.vercel.app/api/games`, fetcher)
 
     const [filteredData, setFilteredData] = useState()
     const [currentItems, setCurrentItems] = useState()

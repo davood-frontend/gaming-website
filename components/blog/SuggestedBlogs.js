@@ -14,7 +14,7 @@ const SuggestedBlogs = ({ id }) => {
 
     const [blogs, setBlogs] = useState()
     const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, error, isLoading } = useSWR('/api/blogs', fetcher)
+    const { data, error, isLoading } = useSWR('https://gaming-shop-backend.vercel.app/api/blogs', fetcher)
 
     useEffect(() => {
         if (!isLoading) {

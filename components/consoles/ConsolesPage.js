@@ -11,7 +11,7 @@ const ConsolesPage = ({ scrollLocation }) => {
     const [filteredData, setFilteredData] = useState()
     const [currentItems, setCurrentItems] = useState()
     const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`/api/consoles`, fetcher)
+    const { data, error, isLoading } = useSWR(`https://gaming-shop-backend.vercel.app/api/consoles`, fetcher)
 
     useEffect(() => { 
         if (!isLoading) {
