@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Container, Typography, Box, Divider, IconButton, Tooltip } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import Logo from '@/assets/headerLogo.png'
@@ -8,6 +8,8 @@ import { PersonOutlineOutlined, SearchOutlined, ShoppingCartOutlined, Instagram,
 import { grey } from '@mui/material/colors';
 import Link from 'next/link';
 import styles from '@/styles/homePage/Header.module.css'
+import SnackBar from '../general/SnackBar';
+
 const CostumNextLink = ({ href, children }) => {
     return (
         <Link href={href} style={{ color: 'white', textDecoration: 'none', fontWeight: 300, fontSize: '14px' }}>
@@ -15,11 +17,12 @@ const CostumNextLink = ({ href, children }) => {
         </Link>
     )
 }
-const CostumIconButton = ({ Icon, color, size, href, desc }) => {
+
+const CostumIconButton = ({ Icon, color, size, href, desc, ...props }) => {
     return (
         <Link href={href || ''}>
             <Tooltip title={desc} arrow>
-                <IconButton size={size || 'small'} color={color || 'default'}>
+                <IconButton size={size || 'small'} color={color || 'default'} {...props}>
                     <Icon sx={{ fontSize: '18px' }} />
                 </IconButton>
             </Tooltip>
@@ -29,11 +32,27 @@ const CostumIconButton = ({ Icon, color, size, href, desc }) => {
 
 
 const DesktopHeader = () => {
+    const [snackBar, setSnackBar] = useState({
+        open: false,
+        message: '',
+        severity: '',
+    })
+    const commingSoon = () => {
+        setSnackBar({
+            open: true,
+            message: 'این قسمت به زودی به وبسایت اضافه خواهد شد',
+            severity: 'success',
+
+        })
+    }
+
     return (
 
         <AppBar className={styles.desktopHeader}>
             <Container maxWidth={false}>
                 <Toolbar sx={{ '&.MuiToolbar-root': { paddingX: { sm: '20px', md: '30px', lg: '10%' } } }}>
+                    <SnackBar setSnackBar={setSnackBar} snackBar={snackBar} />
+
                     <Grid container sx={{ width: 1 }}>
 
                         <Grid xs={2}>
@@ -55,11 +74,11 @@ const DesktopHeader = () => {
                                     <CostumIconButton Icon={Instagram} />
                                 </Box>
                                 <Box className={styles.actionContainer} >
-                                    <CostumIconButton Icon={SearchOutlined} color='dark' desc='جستجو' />
+                                    <CostumIconButton Icon={SearchOutlined} color='dark' desc='جستجو' onClick={commingSoon} />
                                     <Divider orientation='vertical' color={grey[900]} variant='middle' flexItem />
-                                    <CostumIconButton Icon={ShoppingCartOutlined} color='dark' desc='سبد خرید' />
+                                    <CostumIconButton Icon={ShoppingCartOutlined} color='dark' desc='سبد خرید' onClick={commingSoon} />
                                     <Divider orientation='vertical' color={grey[900]} variant='middle' flexItem />
-                                    <CostumIconButton Icon={PersonOutlineOutlined} color='dark' desc='پروفایل' />
+                                    <CostumIconButton Icon={PersonOutlineOutlined} color='dark' desc='پروفایل' onClick={commingSoon} />
                                 </Box>
                             </Grid>
 
