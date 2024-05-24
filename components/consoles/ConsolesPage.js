@@ -7,6 +7,7 @@ import Loading from '@/components/general/Loading';
 import useSWR from 'swr';
 import PaginationComponent from '@/components/products/PaginationComponent';
 import Products from '@/components/products/Products';
+import { revalidatePath } from 'next/cache';
 const ConsolesPage = ({ scrollLocation }) => {
     const [filteredData, setFilteredData] = useState()
     const [currentItems, setCurrentItems] = useState()

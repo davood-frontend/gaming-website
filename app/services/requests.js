@@ -1,8 +1,10 @@
+import { revalidatePath } from "next/cache"
+
 const baseUrl = `https://gaming-shop-backend.vercel.app/api/`
 
 
 export const fetchAllGames = async () => {
-    const res = await fetch(`${baseUrl}games`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}games`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -10,7 +12,7 @@ export const fetchAllGames = async () => {
     return data
 }
 export const fetchGame = async (slug) => {
-    const res = await fetch(`${baseUrl}games/${slug}`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}games/${slug}`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -19,7 +21,7 @@ export const fetchGame = async (slug) => {
 }
 
 export const fetchAllConsoles = async () => {
-    const res = await fetch(`${baseUrl}consoles `, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}consoles `)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -27,7 +29,7 @@ export const fetchAllConsoles = async () => {
     return data
 }
 export const fetchConsole = async (slug) => {
-    const res = await fetch(`${baseUrl}consoles/${slug}`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}consoles/${slug}`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -36,7 +38,7 @@ export const fetchConsole = async (slug) => {
 }
 
 export const fetchHeroData = async () => {
-    const res = await fetch(`${baseUrl}heroData`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}heroData`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -45,7 +47,7 @@ export const fetchHeroData = async () => {
 }
 
 export const fetchBannerData = async () => {
-    const res = await fetch(`${baseUrl}bannerData`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}bannerData`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -54,7 +56,7 @@ export const fetchBannerData = async () => {
 }
 
 export const fetchAllBlogs = async () => {
-    const res = await fetch(`${baseUrl}blogs`, { cache: 'no-cache' })
+    const res = await fetch(`${baseUrl}blogs`)
     if (!res.ok) {
         throw new Error('failed to fetch data from API')
     }
@@ -63,7 +65,7 @@ export const fetchAllBlogs = async () => {
 }
 export const fetchBlog = async (id) => {
     try {
-        const res = await fetch(`${baseUrl}blogs/${id}`, { cache: 'no-cache' })
+        const res = await fetch(`${baseUrl}blogs/${id}`)
         const data = await res.json()
         return data
     } catch (err) {
